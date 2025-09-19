@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SneakVerse - About</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/images/SV.png">
+</head>
+
+<body>
+    <div class="nav-bar">
+        <div class="logo">
+            <h2>SneakVerse</h2>
+        </div>
+        <div class="nav-links">
+            <a href="./index.html">Home</a><a href="./collections.html">Collection</a><a href="./about.html">About</a><a
+                href="./contact.html">Contact</a>
+        </div>
+        <div class="cart-icon">
+            <i class="fa-solid fa-cart-shopping" id="cart-btn"></i>
+            <span id="cart-count">0</span>
+        </div>
+        <div class="menu-overlay" id="menu-overlay"></div>
+        <div class="menu" id="menu">
+            <div class="menu-header">SneakVerse</div>
+            <div class="menu-close" id="menu-close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="menu-links">
+                <a href="./index.html"><i class="fa-solid fa-home"></i>&nbsp;&nbsp;Home</a>
+                <a href="./collections.html"><i class="fa-solid fa-shoe-prints"></i>&nbsp;&nbsp;Collection</a>
+                <a href="./about.html"><i class="fa-solid fa-info-circle"></i>&nbsp;&nbsp;About</a>
+                <a href="./contact.html"><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;Contact</a>
+            </div>
+        </div>
+        <div class="menu-icon">
+            <i id="menu-bar" class="fa-solid fa-bars"></i>
+        </div>
+    </div>
+    <!-- hero section -->
+    <section class="about-hero">
+        <div class="about-overlay"></div>
+        <div class="about-hero-left" data-aos="fade-right" data-aos-duration="1000">
+            <h1>About <span>SneakVerse</span></h1>
+            <h3>More Than Sneakers. It's a Lifestyle.</h3>
+            <p>
+                SneakVerse is where sneaker passion meets culture. Born from the love of streetwear,
+                we're building a space where style, innovation, and community walk side by side.
+            </p>
+            <a href="#our-story">
+                <button class="about-btn" data-aos="zoom-in" data-aos-delay="200">Explore Our Story</button>
+            </a>
+        </div>
+        <div class="about-hero-right" data-aos="fade-right" data-aos-duration="1000">
+            <img src="./images/about-team-member.png" alt="SneakVerse Sneakers">
+        </div>
+    </section>
+
+    <div class="fixed-background"></div>
+
+    <!-- Our Story Section -->
+    <section class="our-story-ctn" id="our-story">
+        <div class="story-overlay"></div>
+        <div class="story-container">
+            <div class="story-header" data-aos="fade-up" data-aos-duration="800">
+                <h2>Our <span>Story</span></h2>
+                <p>From a simple idea to a global sneaker revolution</p>
+            </div>
+
+            <div class="story-timeline">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2010</div>
+                        <h3>The Beginning</h3>
+                        <p>Founded in a small garage with a vision to create sneakers that blend style with unmatched
+                            comfort. Our first prototype was hand-stitched and tested on the streets of downtown.</p>
+                    </div>
+                    <div class="timeline-image" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="./images/about-hero.jpg" alt="">
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item reverse" data-aos="fade-in" data-aos-duration="1000">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2014</div>
+                        <h3>First Breakthrough</h3>
+                        <p>Our innovative cushioning technology caught the attention of athletes and sneaker
+                            enthusiasts. We launched our first limited edition collection, which sold out in just 48
+                            hours.</p>
+                    </div>
+                    <div class="timeline-image" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="./images/second-timeline.jpg" alt="">
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2018</div>
+                        <h3>Global Expansion</h3>
+                        <p>We opened our first international store in Tokyo and partnered with renowned designers to
+                            create exclusive collections. Our community grew to over 1 million dedicated followers.</p>
+                    </div>
+                    <div class="timeline-image" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="./images/third-timeline.jpg" alt="SHOP">
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item reverse" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2023</div>
+                        <h3>Innovation & Sustainability</h3>
+                        <p>Today, we continue to push boundaries with eco-friendly materials and cutting-edge technology
+                            while staying true to our original mission: creating exceptional footwear for everyone.</p>
+                    </div>
+                    <div class="timeline-image" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="./images/last-timeline.jpg" alt="OUTLET">
+                    </div>
+                </div>
+            </div>
+
+            <div class="story-stats" data-aos="fade-up" data-aos-duration="1000">
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+                    <h4>500K+</h4>
+                    <p>Happy Customers</p>
+                </div>
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
+                    <h4>12</h4>
+                    <p>Countries</p>
+                </div>
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
+                    <h4>50+</h4>
+                    <p>Awards</p>
+                </div>
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="400">
+                    <h4>100%</h4>
+                    <p>Quality Promise</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="why-choose-us-ctn" id="why-choose-us" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="wc-overlay"></div>
+        <div class="wc-container">
+            <div class="wc-header">
+                <h2>Why <span>Choose Us</span></h2>
+                <p>Experience the difference that sets us apart from the rest</p>
+            </div>
+
+            <div class="wc-features">
+                <div class="wc-feature" data-aos="zoom-in" data-aos-duration="1000">
+                    <div class="wc-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Premium Quality</h3>
+                    <p>Every product is crafted with the finest materials and attention to detail</p>
+                </div>
+
+                <div class="wc-feature" data-aos="zoom-in" data-aos-duration="800">
+                    <div class="wc-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>Get your orders delivered to your doorstep within 2-3 business days</p>
+                </div>
+
+                <div class="wc-feature" data-aos="zoom-in" data-aos-duration="500">
+                    <div class="wc-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Our customer support team is always ready to assist you</p>
+                </div>
+
+                <div class="wc-feature" data-aos="zoom-in" data-aos-duration="1000">
+                    <div class="wc-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <h3>Easy Returns</h3>
+                    <p>Not satisfied? Return within 30 days for a full refund</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="testimonials-ctn" id="testimonials" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="testimonials-overlay"></div>
+        <div class="testimonials-container">
+            <div class="testimonials-header">
+                <h2>What Our <span>Customers Say</span></h2>
+                <p>Real experiences from real people</p>
+            </div>
+
+            <div class="testimonials-slider">
+                <div class="testimonial active">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"These are the most comfortable sneakers I've ever owned. The
+                            quality is exceptional and they look even better in person!"</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Alex Johnson">
+                            <div class="author-info">
+                                <h4>Alex Johnson</h4>
+                                <p>Professional Athlete</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="testimonial-text">"I've been collecting sneakers for over 10 years, and this brand
+                            consistently delivers the best designs and quality."</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Miller">
+                            <div class="author-info">
+                                <h4>Sarah Miller</h4>
+                                <p>Sneaker Collector</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"The customer service is outstanding. They helped me find the
+                            perfect size and the delivery was incredibly fast!"</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Michael Chen">
+                            <div class="author-info">
+                                <h4>Michael Chen</h4>
+                                <p>Fashion Blogger</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-controls">
+                <button class="control-btn prev-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="testimonial-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="control-btn next-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback Form Section -->
+    <section class="feedback-ctn" id="feedback" data-aos="fade-down" data-aos-duration="1000">
+        <div class="feedback-overlay"></div>
+        <div class="feedback-container">
+            <div class="feedback-header">
+                <h2>Share Your <span>Experience</span></h2>
+                <p>We value your feedback to help us improve</p>
+            </div>
+
+            <form class="feedback-form" id="feedback-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="rating">Your Rating</label>
+                    <div class="rating-input">
+                        <input type="radio" id="star5" name="rating" value="5">
+                        <label for="star5"><i class="fas fa-star"></i></label>
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4"><i class="fas fa-star"></i></label>
+                        <input type="radio" id="star3" name="rating" value="3" checked>
+                        <label for="star3"><i class="fas fa-star"></i></label>
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2"><i class="fas fa-star"></i></label>
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1"><i class="fas fa-star"></i></label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Feedback</label>
+                    <textarea id="message" name="message" rows="5"
+                        placeholder="Share your experience with our products..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Feedback</button>
+            </form>
+
+            <div class="live-feedbacks" data-aos="zoom-in-up" data-aos-duration="1000">
+                <h3>Recent Feedback</h3>
+                <div class="feedbacks-container" id="feedbacks-container">
+                    <!-- Yahan dynamic feedback aayega -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer Section -->
+    <footer class="footer glass">
+        <div class="footer-container">
+            <div class="footer-column" data-aos="fade-up" data-aos-duration="800">
+                <div class="footer-logo">
+                    <h2>SneakVerse</h2>
+                </div>
+                <p>Premium sneakers for the modern enthusiast. Quality, style, and comfort in every step.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column" data-aos="fade-up" data-aos-duration="1000">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./collections.html">Collections</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column" data-aos="fade-up" data-aos-duration="1200">
+                <h3>Support</h3>
+                <ul class="footer-links">
+                    <li><a href="./contact.html#faq">FAQ</a></li>
+                    <li><a href="./shipping-returns.html">Shipping & Returns</a></li>
+                    <li><a href="./size-guide.html">Size Guide</a></li>
+                    <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column" data-aos="fade-up" data-aos-duration="1400">
+                <h3>Newsletter</h3>
+                <p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2023 SneakVerse. All Rights Reserved.</p>
+            <div class="payment-methods">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-amex"></i>
+                <i class="fab fa-cc-paypal"></i>
+            </div>
+        </div>
+    </footer>
+    <!-- Checkout Modal -->
+    <div id="buy-modal" class="buy-modal hidden" aria-hidden="true">
+        <div class="buy-modal-content" role="dialog" aria-modal="true" aria-labelledby="buyModalTitle">
+            <span class="buy-close" id="buy-close" aria-label="Close">&times;</span>
+            <div class="buy-modal-grid">
+                <div class="buy-left">
+                    <h3 id="buyModalTitle">Checkout</h3>
+                    <div class="buy-summary">
+                        <img id="buyModalImage" alt="Selected product">
+                        <div class="buy-summary-info">
+                            <h4 id="buyModalItem"></h4>
+                            <p id="buyModalPrice"></p>
+                        </div>
+                        <div class="buy-price-box">
+                            <div class="total-line">
+                                <span>Total:</span>
+                                <strong id="buyTotal">$0</strong>
+                            </div>
+                            <div class="currency-row">
+                                <label for="buyCurrency">Currency</label>
+                                <select id="buyCurrency" class="currency-select">
+                                    <option value="USD">USD</option>
+                                    <option value="PKR">PKR</option>
+                                    <option value="AED">AED</option>
+                                    <option value="EUR">EUR</option>
+                                    <option value="GBP">GBP</option>
+                                    <option value="INR">INR</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buy-select hidden" id="buySelect">
+                        <div class="buy-select-header">Select products you want to order</div>
+                        <div class="buy-select-list" id="buySelectList"></div>
+                    </div>
+                    <p class="buy-note">Secure checkout. No extra fees.</p>
+                </div>
+                <div class="buy-right">
+                    <form id="checkout-form">
+                        <div class="form-group">
+                            <label for="checkout-name">Full Name</label>
+                            <input type="text" id="checkout-name" name="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-email">Email</label>
+                            <input type="email" id="checkout-email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-phone">Phone Number</label>
+                            <input type="tel" id="checkout-phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-address">Address</label>
+                            <textarea id="checkout-address" name="address" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-payment">Payment Method</label>
+                            <select id="checkout-payment" name="payment">
+                                <option value="">Select</option>
+                                <option value="cod">Cash on Delivery</option>
+                                <option value="card">Credit/Debit Card</option>
+                                <option value="upi">UPI</option>
+                                <option value="paypal">PayPal</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="submit-btn" style="width:100%">Place Order</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button id="close-cart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="cart-items" class="cart-items"></div>
+        <div class="cart-footer">
+            <button id="buy-all" class="clear-cart-btn" style="background: var(--secondary-color); margin-right:8px;">Buy All</button>
+            <button id="clear-cart" class="clear-cart-btn">Clear All</button>
+        </div>
+    </div>
+    <div id="cart-overlay" class="cart-overlay"></div>
+    <div id="cart-modal" class="cart-modal hidden">
+        <p>Added to cart successfully!</p>
+    </div>
+    <!-- Order Success Modal -->
+    <section class="success-modal" id="orderSuccessModal" aria-hidden="true">
+        <div class="success-content" role="dialog" aria-modal="true" aria-labelledby="orderSuccessTitle">
+            <span class="success-icon"><i class="fa-solid fa-circle-check"></i></span>
+            <h3 id="orderSuccessTitle">Order Placed Successfully</h3>
+            <p>Thank you! We’ve received your order and sent a confirmation email.</p>
+            <button class="success-btn" id="orderCloseModal">Close</button>
+        </div>
+    </section>
+    <a href="#">
+        <button id="back-to-top" class="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </button></a>
+
+    <script src="./js/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

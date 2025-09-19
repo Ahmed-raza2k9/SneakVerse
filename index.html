@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SneakVerse - Home</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/images/SV.png">
+</head>
+
+<body>
+    <div class="nav-bar">
+        <div class="logo">
+            <h2>SneakVerse</h2>
+        </div>
+        <div class="nav-links">
+            <a href="./index.html">Home</a><a href="./collections.html">Collection</a><a href="./about.html">About</a><a
+                href="./contact.html">Contact</a>
+        </div>
+        <div class="cart-icon">
+            <i class="fa-solid fa-cart-shopping" id="cart-btn"></i>
+            <span id="cart-count">0</span>
+        </div>
+        <div class="menu-overlay" id="menu-overlay"></div>
+        <div class="menu" id="menu">
+            <div class="menu-header">SneakVerse</div>
+            <div class="menu-close" id="menu-close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="menu-links">
+                <a href="./index.html"><i class="fa-solid fa-home"></i>&nbsp;&nbsp;Home</a>
+                <a href="./collections.html"><i class="fa-solid fa-shoe-prints"></i>&nbsp;&nbsp;Collection</a>
+                <a href="./about.html"><i class="fa-solid fa-info-circle"></i>&nbsp;&nbsp;About</a>
+                <a href="./contact.html"><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;Contact</a>
+            </div>
+        </div>
+        <div class="menu-icon">
+            <i id="menu-bar" class="fa-solid fa-bars"></i>
+        </div>
+    </div>
+    <div class="hero-ctn" id="hero">
+        <div class="hero-text">
+            <h1>AIR MAX</h1>
+            <h3>NIKE AIR MAX 90</h3>
+            <h4>$175</h4>
+            <p>Nothing as fly, nothing as comfortable, nothing as proven the Nike Air Max 90
+                stays true to its roots with the iconic Waffle sole, stitched overlays and classic TPU accents.</p>
+            <button class="add-to-cart-btn">
+                ADD TO CART
+            </button>
+        </div>
+        <div class="hero-image">
+            <img src="./images/Shoes.png" alt="IMAGE">
+
+        </div>
+    </div>
+    <div class="new-collections-ctn">
+        <h1 data-aos="fade-in" data-aos-duration="1000">New Collections</h1>
+
+        <div class="new-collections-cards">
+            <div class="new-collections-card card" data-aos="fade-up" data-aos-duration="1000">
+                <img src="./images/nike-vomero-18-57k.png" alt="Sneaker 1" class="card-image">
+                <h3>NIKE VOMERO 18</h3>
+                <p>$200</p>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+            </div>
+            <div class="new-collections-card card" data-aos="fade-up" data-aos-duration="2000">
+                <img src="./images/nike-air-zoom-upturn-sc-38k.png" alt="Sneaker 2" class="card-image">
+                <h3>NIKE AIR ZOOM SC</h3>
+                <p>$145</p>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+            </div>
+            <div class="new-collections-card card" data-aos="fade-up" data-aos-duration="3000">
+                <img src="./images/nike-air-max-excee-32k.png" alt="Sneaker 2" class="card-image">
+                <h3>NIKE AIR MAX EXCEE</h3>
+                <p>$110</p>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+            </div>
+            <div class="new-collections-card card" data-aos="fade-up" data-aos-duration="1000">
+                <img src="./images/nike-quest-6-35k.png" alt="Sneaker 2" class="card-image">
+                <h3>NIKE QUEST 6</h3>
+                <p>$129</p>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+            </div>
+            <div class="new-collections-card card" data-aos="fade-up" data-aos-duration="2000">
+                <img src="./images/nike-air-max-sc-18k.png" alt="Sneaker 2" class="card-image">
+                <h3>NIKE AIR MAX SC</h3>
+                <p>$85</p>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+            </div>
+            <div class="new-collections-card card" data-aos="fade-up" data-aos-duration="3000">
+                <img src="./images/nike-quest-6-35k.png" alt="Sneaker 2" class="card-image">
+                <h3>NIKE QUEST 6</h3>
+                <p>$175</p>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+            </div>
+        </div>
+    </div>
+    <div class="video-ctn">
+        <div class="animated-video">
+            <video src="./videos/Shoe-Store-Cinematic.mp4" autoplay muted loop></video>
+            <div class="video-overlay"></div>
+            <div class="video-caption" data-aos="fade-up" data-aos-duration="1000">
+                <h2>Step Into Cinematic Comfort</h2>
+                <p>Premium drops crafted for performance. Style that moves with you.</p>
+                <a href="./collections.html" class="video-cta">Shop the Drop</a>
+            </div>
+        </div>
+    </div>
+    <div class="limited-edition-ctn">
+        <h1 data-aos="fade-in" data-aos-duration="1000">Limited Edition</h1>
+        <div class="limited-edition-main">
+            <div class="limited-edition-left">
+                <h3>Nike Air Zoom</h3>
+                <p class="limited-edition-subtitle">Ultra-light comfort, precision traction, and a silhouette that turns heads.</p>
+                <div class="le-badges">
+                    <span class="le-badge"><i class="fa-solid fa-fire"></i>&nbsp;Hot Drop</span>
+                    <span class="le-badge"><i class="fa-solid fa-shield"></i>&nbsp;Premium Build</span>
+                    <span class="le-badge"><i class="fa-solid fa-feather"></i>&nbsp;Featherweight</span>
+                </div>
+                <div class="le-cta-row">
+                    <a href="./collections.html" class="le-secondary-btn">Explore Collection</a>
+                </div>
+            </div>
+            <div class="limited-edition-right">
+                <img src="./images/nike-air-zoom-upturn-sc-38k.png" alt="Limited Edition Sneaker">
+            </div>
+        </div>
+    </div>
+    <!-- Sneaker AR Preview Section -->
+    <section class="ar-preview" id="ar-preview">
+        <div class="ar-container" data-aos="fade-up">
+            <div class="ar-text">
+                <h2>Experience Sneaker <span>Like Never Before</span></h2>
+                <p>Rotate, zoom, and explore every detail of our latest drop — all from your browser.</p>
+                <button class="ar-btn" id="view-ar-btn">View in AR</button>
+            </div>
+            <div class="ar-model">
+                <img src="./images/nike-vomero-18-57k.png" alt="Sneaker Preview" id="sneaker-img">
+                <div class="ar-controls">
+                    <button id="rotate-left">&#8592;</button>
+                    <button id="rotate-right">&#8594;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column" data-aos="fade-up" data-aos-duration="800">
+                <div class="footer-logo">
+                    <h2>SneakVerse</h2>
+                </div>
+                <p>Premium sneakers for the modern enthusiast. Quality, style, and comfort in every step.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column" data-aos="fade-up" data-aos-duration="1000">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./collections.html">Collections</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column" data-aos="fade-up" data-aos-duration="1200">
+                <h3>Support</h3>
+                <ul class="footer-links">
+                    <li><a href="./contact.html#faq">FAQ</a></li>
+                    <li><a href="./shipping-returns.html">Shipping & Returns</a></li>
+                    <li><a href="./size-guide.html">Size Guide</a></li>
+                    <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column" data-aos="fade-up" data-aos-duration="1400">
+                <h3>Newsletter</h3>
+                <p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2023 SneakVerse. All Rights Reserved.</p>
+            <div class="payment-methods">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-amex"></i>
+                <i class="fab fa-cc-paypal"></i>
+            </div>
+        </div>
+    </footer>
+    <!-- Checkout Modal -->
+    <div id="buy-modal" class="buy-modal hidden" aria-hidden="true">
+        <div class="buy-modal-content" role="dialog" aria-modal="true" aria-labelledby="buyModalTitle">
+            <span class="buy-close" id="buy-close" aria-label="Close">&times;</span>
+            <div class="buy-modal-grid">
+                <div class="buy-left">
+                    <h3 id="buyModalTitle">Checkout</h3>
+                    <div class="buy-summary">
+                        <img id="buyModalImage" alt="Selected product">
+                        <div class="buy-summary-info">
+                            <h4 id="buyModalItem"></h4>
+                            <p id="buyModalPrice"></p>
+                        </div>
+                        <div class="buy-price-box">
+                            <div class="total-line">
+                                <span>Total:</span>
+                                <strong id="buyTotal">$0</strong>
+                            </div>
+                            <div class="currency-row">
+                                <label for="buyCurrency">Currency</label>
+                                <select id="buyCurrency" class="currency-select">
+                                    <option value="USD">USD</option>
+                                    <option value="PKR">PKR</option>
+                                    <option value="AED">AED</option>
+                                    <option value="EUR">EUR</option>
+                                    <option value="GBP">GBP</option>
+                                    <option value="INR">INR</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buy-select hidden" id="buySelect">
+                        <div class="buy-select-header">Select products you want to order</div>
+                        <div class="buy-select-list" id="buySelectList"></div>
+                    </div>
+                    <p class="buy-note">Secure checkout. No extra fees.</p>
+                </div>
+                <div class="buy-right">
+                    <form id="checkout-form">
+                        <div class="form-group">
+                            <label for="checkout-name">Full Name</label>
+                            <input type="text" id="checkout-name" name="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-email">Email</label>
+                            <input type="email" id="checkout-email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-phone">Phone Number</label>
+                            <input type="tel" id="checkout-phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-address">Address</label>
+                            <textarea id="checkout-address" name="address" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-payment">Payment Method</label>
+                            <select id="checkout-payment" name="payment">
+                                <option value="">Select</option>
+                                <option value="cod">Cash on Delivery</option>
+                                <option value="card">Credit/Debit Card</option>
+                                <option value="upi">UPI</option>
+                                <option value="paypal">PayPal</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="submit-btn" style="width:100%">Place Order</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="cart-modal" class="cart-modal hidden">
+        <p>Added to cart successfully!</p>
+    </div>
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button id="close-cart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="cart-items" class="cart-items"></div>
+        <div class="cart-footer">
+            <button id="buy-all" class="clear-cart-btn" style="background: var(--secondary-color); margin-right:8px;">Buy All</button>
+            <button id="clear-cart" class="clear-cart-btn">Clear All</button>
+        </div>
+    </div>
+    <div id="cart-overlay" class="cart-overlay"></div>
+    <!-- Back to Top Button -->
+    <a href="#"><button id="back-to-top" class="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </button></a>
+
+    <!-- Order Success Modal -->
+    <section class="success-modal" id="orderSuccessModal" aria-hidden="true">
+        <div class="success-content" role="dialog" aria-modal="true" aria-labelledby="orderSuccessTitle">
+            <span class="success-icon"><i class="fa-solid fa-circle-check"></i></span>
+            <h3 id="orderSuccessTitle">Order Placed Successfully</h3>
+            <p>Thank you! We’ve received your order and sent a confirmation email.</p>
+            <button class="success-btn" id="orderCloseModal">Close</button>
+        </div>
+    </section>
+
+    <script src="./js/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

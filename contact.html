@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SneakVerse - Contact</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/images/SV.png">
+</head>
+
+<body>
+    <div class="nav-bar">
+        <div class="logo">
+            <h2>SneakVerse</h2>
+        </div>
+        <div class="nav-links">
+            <a href="./index.html">Home</a><a href="./collections.html">Collection</a><a href="./about.html">About</a><a
+                href="./contact.html">Contact</a>
+        </div>
+        <div class="cart-icon">
+            <i class="fa-solid fa-cart-shopping" id="cart-btn"></i>
+            <span id="cart-count">0</span>
+        </div>
+        <div class="menu-overlay" id="menu-overlay"></div>
+        <div class="menu" id="menu">
+            <div class="menu-header">SneakVerse</div>
+            <div class="menu-close" id="menu-close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="menu-links">
+                <a href="./index.html"><i class="fa-solid fa-home"></i>&nbsp;&nbsp;Home</a>
+                <a href="./collections.html"><i class="fa-solid fa-shoe-prints"></i>&nbsp;&nbsp;Collection</a>
+                <a href="./about.html"><i class="fa-solid fa-info-circle"></i>&nbsp;&nbsp;About</a>
+                <a href="./contact.html"><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;Contact</a>
+            </div>
+        </div>
+        <div class="menu-icon">
+            <i id="menu-bar" class="fa-solid fa-bars"></i>
+        </div>
+    </div>
+    <div class="contact-bg">
+    </div>
+    <!-- ===== Contact Hero Section ===== -->
+    <section class="contact-hero">
+        <div class="contact-overlay"></div>
+
+        <div class="contact-hero-content">
+            <h1>Get in <span>Touch</span></h1>
+            <p>Have questions? We're here to help you step into the future of sneakers.</p>
+            <a href="#contactFormSection"><button class="scroll-btn" id="scroll-btn">
+                    Contact Us <i class="fas fa-arrow-down"></i>
+                </button></a>
+        </div>
+    </section>
+    <!-- ===== Transparent Contact Section ===== -->
+    <section class="contact-modern" id="contactFormSection" data-aos="zoom-in-down" data-aos-duration="1000">
+        <div class="contact-modern-content">
+            <h2>Let’s <span>Connect</span></h2>
+            <p>We’re always ready to lace up the conversation. Drop us a line!</p>
+
+            <form id="contactForm" class="modern-form" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="b3c436b0-5d30-4da6-b7fc-cadce226d218">
+                <input type="text" name="name" id="name" placeholder="Your Name">
+                <input type="email" name="email" id="email" placeholder="Your Email">
+                <input type="text" name="subject" id="subject" placeholder="Subject">
+                <textarea id="message" name="message" rows="5" placeholder="Your Message"></textarea>
+
+                <button type="submit" class="modern-btn">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Success Modal -->
+        <div id="successModal" class="success-modal">
+            <div class="success-content">
+                <span class="success-icon"><i class="fas fa-check-circle"></i>
+                </span>
+                <h2>Message Sent!</h2>
+                <p>Thank you for contacting us. We’ll get back to you shortly.</p>
+                <button id="closeModal" class="success-btn">Close</button>
+            </div>
+        </div>
+
+    </section>
+    <!-- 🌍 Map Section -->
+    <section class="map-section" id="map">
+        <div class="map-header" data-aos="fade-up" data-aos-duration="800">
+            <h2><i class="fa-solid fa-location-dot"></i> Find Us on Map</h2>
+            <p>Discover our location or detect your live position with just one click.</p>
+            <button id="detectLocation" class="modern-btn" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fa-solid fa-crosshairs"></i> Detect My Location
+            </button>
+        </div>
+
+        <div class="map-container" data-aos="fade-up" data-aos-delay="400">
+            <iframe id="mapFrame"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28945.372!2d67.0099!3d24.8607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33d8bb!2sKarachi!5e0!3m2!1sen!2s!4v1690912345678"
+                width="100%" height="400" style="border:0;" allowfullscreen loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+
+
+    <!-- Extra Contact Sections -->
+    <section class="contact-extra" aria-label="Additional contact information">
+        <!-- 1) Quick Info Cards -->
+        <div class="info-grid" data-aos="fade-up" data-aos-duration="800">
+            <div class="info-card">
+                <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <h3>Head Office</h3>
+                <p>Suite 14, Tech Avenue, Karachi, Pakistan</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                <h3>Email</h3>
+                <p>support@sneakverse.com</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                <h3>Phone</h3>
+                <p>+92 300 1234567</p>
+            </div>
+        </div>
+
+        <!-- 2) Business Hours -->
+        <div class="hours" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+            <h2>Business <span>Hours</span></h2>
+            <ul class="hours-list">
+                <li><i class="fa-solid fa-clock"></i><span>Mon - Thu</span><strong>10:00 AM – 7:00 PM</strong></li>
+                <li><i class="fa-solid fa-clock"></i><span>Friday</span><strong>10:00 AM – 6:00 PM</strong></li>
+                <li><i class="fa-solid fa-clock"></i><span>Saturday</span><strong>11:00 AM – 5:00 PM</strong></li>
+                <li><i class="fa-solid fa-circle-xmark"></i><span>Sunday</span><strong>Closed</strong></li>
+            </ul>
+        </div>
+
+        <!-- 3) FAQs -->
+        <div class="faq" id="faq" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
+            <h2>Frequently Asked <span>Questions</span></h2>
+            <div class="faq-list">
+                <div class="faq-item" role="button" tabindex="0" aria-expanded="false">
+                    <h4><span class="icon"><i class="fa-solid fa-truck-fast"></i></span> How long does delivery take?<span class="faq-toggle"><i class="fa-solid fa-chevron-down"></i></span></h4>
+                    <div class="faq-answer"><p>Orders are processed within 24 hours. Standard delivery takes 3–5 business days.</p></div>
+                </div>
+                <div class="faq-item" role="button" tabindex="0" aria-expanded="false">
+                    <h4><span class="icon"><i class="fa-solid fa-arrows-rotate"></i></span> What is your return policy?<span class="faq-toggle"><i class="fa-solid fa-chevron-down"></i></span></h4>
+                    <div class="faq-answer"><p>You can return unworn items within 14 days for a full refund or exchange.</p></div>
+                </div>
+                <div class="faq-item" role="button" tabindex="0" aria-expanded="false">
+                    <h4><span class="icon"><i class="fa-solid fa-shield-halved"></i></span> Is online payment secure?<span class="faq-toggle"><i class="fa-solid fa-chevron-down"></i></span></h4>
+                    <div class="faq-answer"><p>Yes. We use encrypted payment gateways and never store your card details.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer glass">
+        <div class="footer-container">
+            <div class="footer-column" data-aos="fade-up" data-aos-duration="800">
+                <div class="footer-logo">
+                    <h2>SneakVerse</h2>
+                </div>
+                <p>Premium sneakers for the modern enthusiast. Quality, style, and comfort in every step.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column" data-aos="fade-up" data-aos-duration="1000">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./collections.html">Collections</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column" data-aos="fade-up" data-aos-duration="1200">
+                <h3>Support</h3>
+                <ul class="footer-links">
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="./shipping-returns.html">Shipping & Returns</a></li>
+                    <li><a href="./size-guide.html">Size Guide</a></li>
+                    <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column" data-aos="fade-up" data-aos-duration="1400">
+                <h3>Newsletter</h3>
+                <p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2023 SneakVerse. All Rights Reserved.</p>
+            <div class="payment-methods">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-amex"></i>
+                <i class="fab fa-cc-paypal"></i>
+            </div>
+        </div>
+    </footer>
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button id="close-cart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="cart-items" class="cart-items"></div>
+        <div class="cart-footer">
+            <button id="buy-all" class="clear-cart-btn" style="background: var(--secondary-color); margin-right:8px;">Buy All</button>
+            <button id="clear-cart" class="clear-cart-btn">Clear All</button>
+        </div>
+    </div>
+    <div id="cart-overlay" class="cart-overlay"></div>
+    <div id="cart-modal" class="cart-modal hidden">
+        <p>Added to cart successfully!</p>
+    </div>
+    <!-- Checkout Modal -->
+    <div id="buy-modal" class="buy-modal hidden" aria-hidden="true">
+        <div class="buy-modal-content" role="dialog" aria-modal="true" aria-labelledby="buyModalTitle">
+            <span class="buy-close" id="buy-close" aria-label="Close">&times;</span>
+            <div class="buy-modal-grid">
+                <div class="buy-left">
+                    <h3 id="buyModalTitle">Checkout</h3>
+                    <div class="buy-summary">
+                        <img id="buyModalImage" alt="Selected product">
+                        <div class="buy-summary-info">
+                            <h4 id="buyModalItem"></h4>
+                            <p id="buyModalPrice"></p>
+                        </div>
+                        <div class="buy-price-box">
+                            <div class="total-line">
+                                <span>Total:</span>
+                                <strong id="buyTotal">$0</strong>
+                            </div>
+                            <div class="currency-row">
+                                <label for="buyCurrency">Currency</label>
+                                <select id="buyCurrency" class="currency-select">
+                                    <option value="USD">USD</option>
+                                    <option value="PKR">PKR</option>
+                                    <option value="AED">AED</option>
+                                    <option value="EUR">EUR</option>
+                                    <option value="GBP">GBP</option>
+                                    <option value="INR">INR</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buy-select hidden" id="buySelect">
+                        <div class="buy-select-header">Select products you want to order</div>
+                        <div class="buy-select-list" id="buySelectList"></div>
+                    </div>
+                    <p class="buy-note">Secure checkout. No extra fees.</p>
+                </div>
+                <div class="buy-right">
+                    <form id="checkout-form">
+                        <div class="form-group">
+                            <label for="checkout-name">Full Name</label>
+                            <input type="text" id="checkout-name" name="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-email">Email</label>
+                            <input type="email" id="checkout-email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-phone">Phone Number</label>
+                            <input type="tel" id="checkout-phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-address">Address</label>
+                            <textarea id="checkout-address" name="address" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-payment">Payment Method</label>
+                            <select id="checkout-payment" name="payment">
+                                <option value="">Select</option>
+                                <option value="cod">Cash on Delivery</option>
+                                <option value="card">Credit/Debit Card</option>
+                                <option value="upi">UPI</option>
+                                <option value="paypal">PayPal</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="submit-btn" style="width:100%">Place Order</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Order Success Modal for Checkout -->
+    <section class="success-modal" id="orderSuccessModal" aria-hidden="true">
+        <div class="success-content" role="dialog" aria-modal="true" aria-labelledby="orderSuccessTitle">
+            <span class="success-icon"><i class="fa-solid fa-circle-check"></i></span>
+            <h3 id="orderSuccessTitle">Order Placed Successfully</h3>
+            <p>Thank you! We’ve received your order and sent a confirmation email.</p>
+            <button class="success-btn" id="orderCloseModal">Close</button>
+        </div>
+    </section>
+    <a href="#">
+        <button id="back-to-top" class="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </button></a>
+
+    <script src="./js/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
