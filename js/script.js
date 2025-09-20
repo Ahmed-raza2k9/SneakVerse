@@ -1159,6 +1159,9 @@ function setupAddToCartModalEvents(product) {
                 });
                 // Add active class to clicked size
                 e.target.classList.add('active');
+                
+                // Clear any size selection error
+                clearFieldError(sizeContainer);
             }
         });
     }
@@ -1215,7 +1218,11 @@ function setupAddToCartModalEvents(product) {
                 const selectedColor = document.querySelector('.add-to-cart-color-option.active')?.dataset.color;
                 
                 if (!selectedSize) {
-                    showNotification('Please select a size first!', 'warning');
+                    // Show error on size container
+                    const sizeContainer = document.getElementById('add-to-cart-size-options');
+                    if (sizeContainer) {
+                        showFieldError(sizeContainer, 'Please select a size first!');
+                    }
                     return false;
                 }
                 

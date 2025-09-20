@@ -901,6 +901,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 // Add active class to clicked size
                 e.target.classList.add('active');
+                
+                // Clear any size selection error
+                clearProductFieldError(sizeContainer);
             }
         });
 
@@ -1048,7 +1051,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const selectedColor = document.querySelector('.color-option.active')?.dataset.color;
             
             if (!selectedSize) {
-                showProfessionalNotification('Please select a size before proceeding to checkout', 'warning');
+                // Show error on size container
+                const sizeContainer = document.getElementById('sizeOptions');
+                if (sizeContainer) {
+                    showProductFieldError(sizeContainer, 'Please select a size before proceeding to checkout');
+                }
                 return;
             }
 
@@ -1163,37 +1170,81 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
+        // Checkout form validation functions
+        function showProductFieldError(inputEl, message) {
+            if (!inputEl) return;
+            inputEl.classList.add('field-error');
+            let helper = inputEl.parentElement.querySelector('.error-text');
+            if (!helper) {
+                helper = document.createElement('div');
+                helper.className = 'error-text';
+                inputEl.parentElement.appendChild(helper);
+            }
+            helper.textContent = message;
+        }
+
+        function clearProductFieldError(inputEl) {
+            if (!inputEl) return;
+            inputEl.classList.remove('field-error');
+            const helper = inputEl.parentElement.querySelector('.error-text');
+            if (helper) helper.remove();
+        }
+
+        function validateProductCheckoutForm() {
+            const name = document.getElementById('checkout-name');
+            const email = document.getElementById('checkout-email');
+            const phone = document.getElementById('checkout-phone');
+            const address = document.getElementById('checkout-address');
+            const payment = document.getElementById('checkout-payment');
+
+            let isValid = true;
+
+            // Clear previous errors
+            [name, email, phone, address, payment].forEach(clearProductFieldError);
+
+            // Name validation: at least 2 characters
+            if (!name || name.value.trim().length < 2) {
+                showProductFieldError(name, 'Please enter your full name.');
+                isValid = false;
+            }
+
+            // Email validation: simple regex
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+            if (!email || !emailRegex.test(email.value.trim())) {
+                showProductFieldError(email, 'Please enter a valid email address.');
+                isValid = false;
+            }
+
+            // Pakistani mobile: 03XXXXXXXXX (11 digits starting with 03)
+            const pkPhoneRegex = /^03\d{9}$/;
+            if (!phone || !pkPhoneRegex.test(phone.value.trim())) {
+                showProductFieldError(phone, 'Enter valid Pakistani number e.g. 03443090603');
+                isValid = false;
+            }
+
+            // Address: at least 20 characters
+            if (!address || address.value.trim().length < 20) {
+                showProductFieldError(address, 'Address must be at least 20 characters.');
+                isValid = false;
+            }
+
+            // Payment selected
+            if (!payment || !payment.value) {
+                showProductFieldError(payment, 'Please select a payment method.');
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
         // Checkout form submission handler
         const checkoutForm = document.getElementById('checkout-form');
         if (checkoutForm) {
             checkoutForm.addEventListener('submit', (e) => {
                 e.preventDefault();
                 
-                // Basic validation
-                const name = document.getElementById('checkout-name');
-                const email = document.getElementById('checkout-email');
-                const phone = document.getElementById('checkout-phone');
-                const address = document.getElementById('checkout-address');
-                const payment = document.getElementById('checkout-payment');
-                
-                if (!name || !name.value.trim()) {
-                    showProfessionalNotification('Please enter your full name', 'warning');
-                    return;
-                }
-                if (!email || !email.value.trim()) {
-                    showProfessionalNotification('Please enter your email address', 'warning');
-                    return;
-                }
-                if (!phone || !phone.value.trim()) {
-                    showProfessionalNotification('Please enter your phone number', 'warning');
-                    return;
-                }
-                if (!address || !address.value.trim()) {
-                    showProfessionalNotification('Please enter your complete address', 'warning');
-                    return;
-                }
-                if (!payment || !payment.value) {
-                    showProfessionalNotification('Please select a payment method', 'warning');
+                // Validate form before proceeding
+                if (!validateProductCheckoutForm()) {
                     return;
                 }
                 
@@ -1237,6 +1288,15 @@ document.addEventListener('DOMContentLoaded', function() {
                         orderModal.setAttribute('aria-hidden', 'true');
                     }, 3000);
                 }
+            });
+
+            // Real-time validation for checkout form
+            ['input', 'change', 'blur'].forEach(evt => {
+                checkoutForm.addEventListener(evt, (e) => {
+                    const target = e.target;
+                    if (!(target instanceof HTMLElement)) return;
+                    if (target.id?.startsWith('checkout-')) clearProductFieldError(target);
+                });
             });
         }
 
