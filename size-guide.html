@@ -10,7 +10,7 @@
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="/images/SV.png">
+    <link rel="icon" type="image/x-icon" href="./images/SV.png">
 </head>
 
 <body>
@@ -22,9 +22,18 @@
             <a href="./index.html">Home</a><a href="./collections.html">Collection</a><a href="./about.html">About</a><a
                 href="./contact.html">Contact</a>
         </div>
-        <div class="cart-icon">
-            <i class="fa-solid fa-cart-shopping" id="cart-btn"></i>
-            <span id="cart-count">0</span>
+        <div class="nav-right">
+            <div class="wishlist-icon">
+                <i class="fa-solid fa-heart" id="wishlist-btn"></i>
+                <span id="wishlist-count">0</span>
+            </div>
+            <div class="cart-icon">
+                <i class="fa-solid fa-bag-shopping" id="cart-btn"></i>
+                <span id="cart-count">0</span>
+            </div>
+            <div class="menu-icon">
+                <i id="menu-bar" class="fa-solid fa-bars"></i>
+            </div>
         </div>
         <div class="menu-overlay" id="menu-overlay"></div>
         <div class="menu" id="menu">
@@ -38,9 +47,6 @@
                 <a href="./about.html"><i class="fa-solid fa-info-circle"></i>&nbsp;&nbsp;About</a>
                 <a href="./contact.html"><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;Contact</a>
             </div>
-        </div>
-        <div class="menu-icon">
-            <i id="menu-bar" class="fa-solid fa-bars"></i>
         </div>
     </div>
 
@@ -315,6 +321,19 @@
         </div>
     </div>
     <div id="cart-overlay" class="cart-overlay"></div>
+
+    <!-- Wishlist Sidebar -->
+    <div id="wishlist-sidebar" class="wishlist-sidebar">
+        <div class="wishlist-header">
+            <h2>Your Wishlist</h2>
+            <button id="close-wishlist"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="wishlist-items" class="wishlist-items"></div>
+        <div class="wishlist-footer">
+            <button id="clear-wishlist" class="clear-wishlist-btn">Clear All</button>
+        </div>
+    </div>
+    <div id="wishlist-overlay" class="wishlist-overlay"></div>
 
     <!-- Order Success Modal -->
     <section class="success-modal" id="orderSuccessModal" aria-hidden="true">

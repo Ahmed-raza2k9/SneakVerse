@@ -4,13 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our complete collection of premium sneakers at SneakVerse. Find Nike Air Max, Vomero, Quest, and more for men, women, and kids.">
+    <meta name="keywords" content="sneaker collection, nike sneakers, air max, vomero, quest, men sneakers, women sneakers, kids sneakers">
     <title>SneakVerse - Collections</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="/images/SV.png">
+    <link rel="icon" type="image/x-icon" href="./images/SV.png">
 </head>
 
 <body>
@@ -22,9 +27,18 @@
             <a href="./index.html">Home</a><a href="./collections.html">Collection</a><a href="./about.html">About</a><a
                 href="./contact.html">Contact</a>
         </div>
-        <div class="cart-icon">
-            <i class="fa-solid fa-cart-shopping" id="cart-btn"></i>
-            <span id="cart-count">0</span>
+        <div class="nav-right">
+            <div class="wishlist-icon">
+                <i class="fa-solid fa-heart" id="wishlist-btn"></i>
+                <span id="wishlist-count">0</span>
+            </div>
+            <div class="cart-icon">
+                <i class="fa-solid fa-bag-shopping" id="cart-btn"></i>
+                <span id="cart-count">0</span>
+            </div>
+            <div class="menu-icon">
+                <i id="menu-bar" class="fa-solid fa-bars"></i>
+            </div>
         </div>
         <div class="menu-overlay" id="menu-overlay"></div>
         <div class="menu" id="menu">
@@ -38,9 +52,6 @@
                 <a href="./about.html"><i class="fa-solid fa-info-circle"></i>&nbsp;&nbsp;About</a>
                 <a href="./contact.html"><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;Contact</a>
             </div>
-        </div>
-        <div class="menu-icon">
-            <i id="menu-bar" class="fa-solid fa-bars"></i>
         </div>
     </div>
         <div class="collections-hero">
@@ -67,6 +78,11 @@
                 <div class="collections-hero-right" data-aos="fade-down" data-aos-duration="1000">
                     <div class="hero-card">
                         <img src="./images/nike-vomero-18-57k.png" alt="SneakVerse X-01">
+                        <div class="floating-elements">
+                            <div class="floating-dot dot-1"></div>
+                            <div class="floating-dot dot-2"></div>
+                            <div class="floating-dot dot-3"></div>
+                        </div>
                         <div class="card-content">
                             <h3>SneakVerse Vomero 18</h3>
                             <p>Nextgen design with adaptive cushioning and futuristic detailing.</p>
@@ -103,7 +119,10 @@
                         </div>
                         <h3>Nike Air Max Excee</h3>
                         <p class="price">$120</p>
-                        <button class="add-to-cart-btn">ADD TO CART</button>
+                        <div class="card-actions">
+                            <button class="add-to-cart-btn">ADD TO CART</button>
+                            <button class="view-details-btn" data-product-id="nike-air-max-excee">VIEW DETAILS</button>
+                        </div>
                     </div>
 
                     <div class="product-card" data-category="male">
@@ -112,7 +131,10 @@
                         </div>
                         <h3>Nike Quest 6</h3>
                         <p class="price">$135</p>
-                        <button class="add-to-cart-btn">ADD TO CART</button>
+                        <div class="card-actions">
+                            <button class="add-to-cart-btn">ADD TO CART</button>
+                            <button class="view-details-btn" data-product-id="nike-quest-6">VIEW DETAILS</button>
+                        </div>
                     </div>
 
                     <div class="product-card" data-category="male">
@@ -121,7 +143,10 @@
                         </div>
                         <h3>Nike Air Max SC</h3>
                         <p class="price">$110</p>
-                        <button class="add-to-cart-btn">ADD TO CART</button>
+                        <div class="card-actions">
+                            <button class="add-to-cart-btn">ADD TO CART</button>
+                            <button class="view-details-btn" data-product-id="nike-air-max-sc">VIEW DETAILS</button>
+                        </div>
                     </div>
 
                     <div class="product-card" data-category="male">
@@ -130,7 +155,10 @@
                         </div>
                         <h3>Nike Vomero 18</h3>
                         <p class="price">$160</p>
-                        <button class="add-to-cart-btn">ADD TO CART</button>
+                        <div class="card-actions">
+                            <button class="add-to-cart-btn">ADD TO CART</button>
+                            <button class="view-details-btn" data-product-id="nike-vomero-18">VIEW DETAILS</button>
+                        </div>
                     </div>
 
                     <!-- Female Products -->
@@ -140,7 +168,10 @@
                         </div>
                         <h3>Nike Air Force 1</h3>
                         <p class="price">$115</p>
-                        <button class="add-to-cart-btn">ADD TO CART</button>
+                        <div class="card-actions">
+                            <button class="add-to-cart-btn">ADD TO CART</button>
+                            <button class="view-details-btn" data-product-id="nike-air-force-1">VIEW DETAILS</button>
+                        </div>
                     </div>
 
                     <div class="product-card" data-category="female">
@@ -149,7 +180,10 @@
                         </div>
                         <h3>Nike React Vision</h3>
                         <p class="price">$140</p>
-                        <button class="add-to-cart-btn">ADD TO CART</button>
+                        <div class="card-actions">
+                            <button class="add-to-cart-btn">ADD TO CART</button>
+                            <button class="view-details-btn" data-product-id="nike-react-vision">VIEW DETAILS</button>
+                        </div>
                     </div>
 
                     <div class="product-card" data-category="female">
@@ -158,7 +192,10 @@
                         </div>
                         <h3>Nike Zoom Fly</h3>
                         <p class="price">$155</p>
-                        <button class="add-to-cart-btn">ADD TO CART</button>
+                        <div class="card-actions">
+                            <button class="add-to-cart-btn">ADD TO CART</button>
+                            <button class="view-details-btn" data-product-id="nike-zoom-fly">VIEW DETAILS</button>
+                        </div>
                     </div>
 
                     <div class="product-card" data-category="female">
@@ -167,7 +204,10 @@
                         </div>
                         <h3>Nike Air Zoom SC</h3>
                         <p class="price">$130</p>
-                        <button class="add-to-cart-btn">ADD TO CART</button>
+                        <div class="card-actions">
+                            <button class="add-to-cart-btn">ADD TO CART</button>
+                            <button class="view-details-btn" data-product-id="nike-air-zoom-sc">VIEW DETAILS</button>
+                        </div>
                     </div>
 
                     <!-- Kids Products -->
@@ -177,7 +217,10 @@
                         </div>
                         <h3>Nike Air Max SC Kids</h3>
                         <p class="price">$85</p>
-                        <button class="add-to-cart-btn">ADD TO CART</button>
+                        <div class="card-actions">
+                            <button class="add-to-cart-btn">ADD TO CART</button>
+                            <button class="view-details-btn" data-product-id="nike-air-max-sc-kids">VIEW DETAILS</button>
+                        </div>
                     </div>
 
                     <div class="product-card" data-category="kids">
@@ -186,7 +229,10 @@
                         </div>
                         <h3>Nike Quest 6 Kids</h3>
                         <p class="price">$90</p>
-                        <button class="add-to-cart-btn">ADD TO CART</button>
+                        <div class="card-actions">
+                            <button class="add-to-cart-btn">ADD TO CART</button>
+                            <button class="view-details-btn" data-product-id="nike-quest-6-kids">VIEW DETAILS</button>
+                        </div>
                     </div>
 
                     <div class="product-card" data-category="kids">
@@ -195,7 +241,10 @@
                         </div>
                         <h3>Nike Air Max Excee Kids</h3>
                         <p class="price">$75</p>
-                        <button class="add-to-cart-btn">ADD TO CART</button>
+                        <div class="card-actions">
+                            <button class="add-to-cart-btn">ADD TO CART</button>
+                            <button class="view-details-btn" data-product-id="nike-air-max-excee-kids">VIEW DETAILS</button>
+                        </div>
                     </div>
 
                     <div class="product-card" data-category="kids">
@@ -204,7 +253,10 @@
                         </div>
                         <h3>Nike React Kids</h3>
                         <p class="price">$80</p>
-                        <button class="add-to-cart-btn">ADD TO CART</button>
+                        <div class="card-actions">
+                            <button class="add-to-cart-btn">ADD TO CART</button>
+                            <button class="view-details-btn" data-product-id="nike-react-kids">VIEW DETAILS</button>
+                        </div>
                     </div>
 
                     <!-- Additional Mixed Products -->
@@ -214,7 +266,10 @@
                         </div>
                         <h3>Nike Air Zoom Upturn</h3>
                         <p class="price">$145</p>
-                        <button class="add-to-cart-btn">ADD TO CART</button>
+                        <div class="card-actions">
+                            <button class="add-to-cart-btn">ADD TO CART</button>
+                            <button class="view-details-btn" data-product-id="nike-air-zoom-upturn">VIEW DETAILS</button>
+                        </div>
                     </div>
 
                     <div class="product-card" data-category="female">
@@ -223,7 +278,10 @@
                         </div>
                         <h3>Nike Vomero 18 Women</h3>
                         <p class="price">$150</p>
-                        <button class="add-to-cart-btn">ADD TO CART</button>
+                        <div class="card-actions">
+                            <button class="add-to-cart-btn">ADD TO CART</button>
+                            <button class="view-details-btn" data-product-id="nike-vomero-18-women">VIEW DETAILS</button>
+                        </div>
                     </div>
 
                     <div class="product-card" data-category="kids">
@@ -232,7 +290,10 @@
                         </div>
                         <h3>Nike Zoom Kids</h3>
                         <p class="price">$70</p>
-                        <button class="add-to-cart-btn">ADD TO CART</button>
+                        <div class="card-actions">
+                            <button class="add-to-cart-btn">ADD TO CART</button>
+                            <button class="view-details-btn" data-product-id="nike-zoom-kids">VIEW DETAILS</button>
+                        </div>
                     </div>
 
                     <div class="product-card" data-category="male">
@@ -241,7 +302,10 @@
                         </div>
                         <h3>Nike Air Force 1 Men</h3>
                         <p class="price">$125</p>
-                        <button class="add-to-cart-btn">ADD TO CART</button>
+                        <div class="card-actions">
+                            <button class="add-to-cart-btn">ADD TO CART</button>
+                            <button class="view-details-btn" data-product-id="nike-air-force-1-men">VIEW DETAILS</button>
+                        </div>
                     </div>
 
 
@@ -374,6 +438,67 @@
     <div id="cart-modal" class="cart-modal hidden">
         <p>Added to cart successfully!</p>
     </div>
+
+    <!-- Add to Cart Modal -->
+    <div id="add-to-cart-modal" class="add-to-cart-modal hidden">
+        <div class="add-to-cart-modal-content">
+            <div class="add-to-cart-header">
+                <h3 id="add-to-cart-product-name">Product Name</h3>
+                <button class="add-to-cart-close" id="add-to-cart-close">
+                    <i class="fa-solid fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="add-to-cart-body">
+                <div class="add-to-cart-image">
+                    <img id="add-to-cart-product-image" src="" alt="Product Image">
+                </div>
+                
+                <div class="add-to-cart-options">
+                    <!-- Size Selection -->
+                    <div class="add-to-cart-size-selection">
+                        <h4>Select Size</h4>
+                        <div class="add-to-cart-size-options" id="add-to-cart-size-options">
+                            <!-- Sizes will be dynamically generated -->
+                        </div>
+                    </div>
+
+                    <!-- Color Selection -->
+                    <div class="add-to-cart-color-selection">
+                        <h4>Select Color</h4>
+                        <div class="add-to-cart-color-options" id="add-to-cart-color-options">
+                            <!-- Colors will be dynamically generated -->
+                        </div>
+                    </div>
+
+                    <!-- Quantity Selection -->
+                    <div class="add-to-cart-quantity-selection">
+                        <h4>Quantity</h4>
+                        <div class="add-to-cart-quantity-controls">
+                            <button class="add-to-cart-quantity-btn" id="add-to-cart-quantity-decrease">
+                                <i class="fa-solid fa-minus"></i>
+                            </button>
+                            <span class="add-to-cart-quantity-display" id="add-to-cart-quantity-display">1</span>
+                            <button class="add-to-cart-quantity-btn" id="add-to-cart-quantity-increase">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="add-to-cart-footer">
+                <div class="add-to-cart-price">
+                    <span id="add-to-cart-total-price">$0</span>
+                </div>
+                <button class="add-to-cart-confirm-btn" id="add-to-cart-confirm">
+                    <i class="fa-solid fa-cart-plus"></i>
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="add-to-cart-overlay" class="add-to-cart-overlay"></div>
     <!-- Checkout Modal -->
     <div id="buy-modal" class="buy-modal hidden" aria-hidden="true">
         <div class="buy-modal-content" role="dialog" aria-modal="true" aria-labelledby="buyModalTitle">
@@ -458,6 +583,19 @@
         </div>
     </div>
     <div id="cart-overlay" class="cart-overlay"></div>
+
+    <!-- Wishlist Sidebar -->
+    <div id="wishlist-sidebar" class="wishlist-sidebar">
+        <div class="wishlist-header">
+            <h2>Your Wishlist</h2>
+            <button id="close-wishlist"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="wishlist-items" class="wishlist-items"></div>
+        <div class="wishlist-footer">
+            <button id="clear-wishlist" class="clear-wishlist-btn">Clear All</button>
+        </div>
+    </div>
+    <div id="wishlist-overlay" class="wishlist-overlay"></div>
 
     <!-- Back to Top Button -->
     <a href="#"><button id="back-to-top" class="back-to-top">

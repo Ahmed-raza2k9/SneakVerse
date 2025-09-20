@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SneakVerse - Product Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./images/SV.png">
+</head>
+
+<body>
+    <div class="nav-bar">
+        <div class="logo">
+            <h2>SneakVerse</h2>
+        </div>
+        <div class="nav-links">
+            <a href="./index.html">Home</a><a href="./collections.html">Collection</a><a href="./about.html">About</a><a
+                href="./contact.html">Contact</a>
+        </div>
+        <div class="nav-right">
+            <div class="wishlist-icon">
+                <i class="fa-solid fa-heart" id="wishlist-btn"></i>
+                <span id="wishlist-count">0</span>
+            </div>
+            <div class="cart-icon">
+                <i class="fa-solid fa-bag-shopping" id="cart-btn"></i>
+                <span id="cart-count">0</span>
+            </div>
+            <div class="menu-icon">
+                <i id="menu-bar" class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <div class="menu-overlay" id="menu-overlay"></div>
+        <div class="menu" id="menu">
+            <div class="menu-header">SneakVerse</div>
+            <div class="menu-close" id="menu-close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="menu-links">
+                <a href="./index.html"><i class="fa-solid fa-home"></i>&nbsp;&nbsp;Home</a>
+                <a href="./collections.html"><i class="fa-solid fa-shoe-prints"></i>&nbsp;&nbsp;Collection</a>
+                <a href="./about.html"><i class="fa-solid fa-info-circle"></i>&nbsp;&nbsp;About</a>
+                <a href="./contact.html"><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail-section" id="productDetail">
+        <div class="product-detail-container">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb" data-aos="fade-right" data-aos-duration="800">
+                <a href="./index.html">Home</a>
+                <span>/</span>
+                <a href="./collections.html">Collections</a>
+                <span>/</span>
+                <span id="breadcrumb-product">Product</span>
+            </div>
+
+            <div class="product-detail-grid">
+                <!-- Product Images -->
+                <div class="product-images" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="main-image-container">
+                        <img id="main-product-image" src="" alt="Product Image" class="main-image">
+                        <div class="image-zoom-overlay" id="imageZoomOverlay">
+                            <img id="zoomed-image" src="" alt="Zoomed Product Image">
+                            <button class="zoom-close" id="zoomClose">
+                                <i class="fa-solid fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="thumbnail-images">
+                        <img id="thumb1" src="" alt="Thumbnail 1" class="thumbnail active">
+                        <img id="thumb2" src="" alt="Thumbnail 2" class="thumbnail">
+                        <img id="thumb3" src="" alt="Thumbnail 3" class="thumbnail">
+                        <img id="thumb4" src="" alt="Thumbnail 4" class="thumbnail">
+                    </div>
+                    
+                    <!-- Desktop-only additional content -->
+                    <div class="desktop-additional-info">
+                        <div class="quick-specs">
+                            <h4>Quick Specs</h4>
+                            <div class="spec-item">
+                                <i class="fa-solid fa-weight-hanging"></i>
+                                <span>Lightweight Design</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fa-solid fa-wind"></i>
+                                <span>Breathable Upper</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fa-solid fa-shield"></i>
+                                <span>Durable Construction</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fa-solid fa-heart"></i>
+                                <span>Comfort Technology</span>
+                            </div>
+                        </div>
+                        
+                        <div class="product-highlights">
+                            <h4>Why Choose This Product?</h4>
+                            <ul>
+                                <li><i class="fa-solid fa-check"></i> Premium materials for lasting quality</li>
+                                <li><i class="fa-solid fa-check"></i> Advanced cushioning technology</li>
+                                <li><i class="fa-solid fa-check"></i> Designed for all-day comfort</li>
+                                <li><i class="fa-solid fa-check"></i> Modern, stylish appearance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="product-badges">
+                        <span class="badge new">NEW</span>
+                        <span class="badge hot">HOT</span>
+                    </div>
+                    
+                    <h1 id="product-title" class="product-title">Product Title</h1>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="rating-text">(4.8) 127 reviews</span>
+                    </div>
+                    
+                    <div class="product-price">
+                        <span id="product-price" class="current-price">$0</span>
+                        <span id="product-original-price" class="original-price">$0</span>
+                        <span class="discount-badge">-20% OFF</span>
+                    </div>
+
+                    <div class="product-description">
+                        <h3>Description</h3>
+                        <p id="product-description-text">Product description will be loaded here...</p>
+                    </div>
+
+                    <!-- Size Selection -->
+                    <div class="size-selection">
+                        <h3>Select Size</h3>
+                        <div class="size-options" id="sizeOptions">
+                            <!-- Sizes will be dynamically generated -->
+                        </div>
+                        <a href="./size-guide.html" class="size-guide-link">
+                            <i class="fa-solid fa-ruler"></i> Size Guide
+                        </a>
+                    </div>
+
+                    <!-- Color Selection -->
+                    <div class="color-selection">
+                        <h3>Select Color</h3>
+                        <div class="color-options" id="colorOptions">
+                            <!-- Colors will be dynamically generated -->
+                        </div>
+                    </div>
+
+                    <!-- Quantity Selection -->
+                    <div class="quantity-selection">
+                        <h3>Quantity</h3>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" id="quantityDecrease">
+                                <i class="fa-solid fa-minus"></i>
+                            </button>
+                            <span class="quantity-display" id="quantityDisplay">1</span>
+                            <button class="quantity-btn" id="quantityIncrease">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="product-actions">
+                        <button class="buy-now-btn secondary-btn" id="buyNowBtn">
+                            <i class="fa-solid fa-bolt"></i>
+                            Buy Now
+                        </button>
+                        <button class="wishlist-btn" id="wishlistBtn">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+
+                    <!-- Product Features -->
+                    <div class="product-features">
+                        <div class="feature">
+                            <i class="fa-solid fa-truck"></i>
+                            <span>Free Shipping</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fa-solid fa-undo"></i>
+                            <span>30-Day Returns</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fa-solid fa-shield"></i>
+                            <span>2-Year Warranty</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fa-solid fa-headset"></i>
+                            <span>24/7 Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Details Tabs -->
+    <section class="product-tabs-section">
+        <div class="product-tabs-container">
+            <div class="tabs-nav">
+                <button class="tab-btn active" data-tab="details">Details</button>
+                <button class="tab-btn" data-tab="specifications">Specifications</button>
+                <button class="tab-btn" data-tab="reviews">Reviews</button>
+                <button class="tab-btn" data-tab="shipping">Shipping</button>
+            </div>
+
+            <div class="tabs-content">
+                <div class="tab-panel active" id="details">
+                    <h3>Product Details</h3>
+                    <div id="product-details-content">
+                        <!-- Details will be loaded dynamically -->
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="specifications">
+                    <h3>Specifications</h3>
+                    <div class="specs-table" id="specifications-content">
+                        <!-- Specifications will be loaded dynamically -->
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="reviews">
+                    <h3>Customer Reviews</h3>
+                    <div class="reviews-summary">
+                        <div class="rating-overview">
+                            <div class="overall-rating">
+                                <span class="rating-number">4.8</span>
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <span class="total-reviews">Based on 127 reviews</span>
+                            </div>
+                            <div class="rating-breakdown">
+                                <div class="rating-bar">
+                                    <span><i class="fa-solid fa-star"></i>5</span>
+                                    <div class="bar"><div class="fill" style="width: 85%"></div></div>
+                                    <span>85%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span><i class="fa-solid fa-star"></i>4</span>
+                                    <div class="bar"><div class="fill" style="width: 12%"></div></div>
+                                    <span>12%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span><i class="fa-solid fa-star"></i>3</span>
+                                    <div class="bar"><div class="fill" style="width: 2%"></div></div>
+                                    <span>2%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span><i class="fa-solid fa-star"></i>2</span>
+                                    <div class="bar"><div class="fill" style="width: 1%"></div></div>
+                                    <span>1%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span><i class="fa-solid fa-star"></i>1</span>
+                                    <div class="bar"><div class="fill" style="width: 0%"></div></div>
+                                    <span>0%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews-list" id="reviewsList">
+                        <!-- Reviews will be loaded dynamically -->
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="shipping">
+                    <h3>Shipping & Returns</h3>
+                    <div class="shipping-info">
+                        <div class="shipping-option">
+                            <i class="fa-solid fa-truck"></i>
+                            <div>
+                                <h4>Standard Shipping</h4>
+                                <p>5-7 business days - FREE</p>
+                            </div>
+                        </div>
+                        <div class="shipping-option">
+                            <i class="fa-solid fa-rocket"></i>
+                            <div>
+                                <h4>Express Shipping</h4>
+                                <p>2-3 business days - $15</p>
+                            </div>
+                        </div>
+                        <div class="shipping-option">
+                            <i class="fa-solid fa-plane"></i>
+                            <div>
+                                <h4>Next Day Delivery</h4>
+                                <p>1 business day - $25</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related-products-section">
+        <div class="related-products-container">
+            <h2 data-aos="fade-up" data-aos-duration="800">You Might Also Like</h2>
+            <div class="related-products-grid" id="relatedProducts">
+                <!-- Related products will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-floating-elements">
+            <div class="footer-floating-dot footer-dot-1"></div>
+            <div class="footer-floating-dot footer-dot-2"></div>
+            <div class="footer-floating-dot footer-dot-3"></div>
+            <div class="footer-floating-dot footer-dot-4"></div>
+            <div class="footer-floating-dot footer-dot-5"></div>
+        </div>
+        <div class="footer-container">
+            <div class="footer-column" data-aos="fade-up" data-aos-duration="800">
+                <div class="footer-logo">
+                    <h2>SneakVerse</h2>
+                </div>
+                <p>Premium sneakers for the modern enthusiast. Quality, style, and comfort in every step.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column" data-aos="fade-up" data-aos-duration="1000">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./collections.html">Collections</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column" data-aos="fade-up" data-aos-duration="1200">
+                <h3>Support</h3>
+                <ul class="footer-links">
+                    <li><a href="./contact.html#faq">FAQ</a></li>
+                    <li><a href="./shipping-returns.html">Shipping & Returns</a></li>
+                    <li><a href="./size-guide.html">Size Guide</a></li>
+                    <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column" data-aos="fade-up" data-aos-duration="1400">
+                <h3>Newsletter</h3>
+                <p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2023 SneakVerse. All Rights Reserved.</p>
+            <div class="payment-methods">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-amex"></i>
+                <i class="fab fa-cc-paypal"></i>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Checkout Modal -->
+    <div id="buy-modal" class="buy-modal hidden" aria-hidden="true">
+        <div class="buy-modal-content" role="dialog" aria-modal="true" aria-labelledby="buyModalTitle">
+            <span class="buy-close" id="buy-close" aria-label="Close">&times;</span>
+            <div class="buy-modal-grid">
+                <div class="buy-left">
+                    <h3 id="buyModalTitle">Checkout</h3>
+                    <div class="buy-summary">
+                        <img id="buyModalImage" alt="Selected product">
+                        <div class="buy-summary-info">
+                            <h4 id="buyModalItem"></h4>
+                            <p id="buyModalPrice"></p>
+                        </div>
+                        <div class="buy-price-box">
+                            <div class="total-line">
+                                <span>Total:</span>
+                                <strong id="buyTotal">$0</strong>
+                            </div>
+                            <div class="currency-row">
+                                <label for="buyCurrency">Currency</label>
+                                <select id="buyCurrency" class="currency-select">
+                                    <option value="USD">USD</option>
+                                    <option value="PKR">PKR</option>
+                                    <option value="AED">AED</option>
+                                    <option value="EUR">EUR</option>
+                                    <option value="GBP">GBP</option>
+                                    <option value="INR">INR</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buy-select hidden" id="buySelect">
+                        <div class="buy-select-header">Select products you want to order</div>
+                        <div class="buy-select-list" id="buySelectList"></div>
+                    </div>
+                    <p class="buy-note">Secure checkout. No extra fees.</p>
+                </div>
+                <div class="buy-right">
+                    <form id="checkout-form">
+                        <div class="form-group">
+                            <label for="checkout-name">Full Name</label>
+                            <input type="text" id="checkout-name" name="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-email">Email</label>
+                            <input type="email" id="checkout-email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-phone">Phone Number</label>
+                            <input type="tel" id="checkout-phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-address">Address</label>
+                            <textarea id="checkout-address" name="address" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-payment">Payment Method</label>
+                            <select id="checkout-payment" name="payment">
+                                <option value="">Select</option>
+                                <option value="cod">Cash on Delivery</option>
+                                <option value="card">Credit/Debit Card</option>
+                                <option value="upi">UPI</option>
+                                <option value="paypal">PayPal</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="submit-btn" style="width:100%">Place Order</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cart-modal" class="cart-modal hidden">
+        <p>Added to cart successfully!</p>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button id="close-cart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="cart-items" class="cart-items"></div>
+        <div class="cart-footer">
+            <button id="buy-all" class="clear-cart-btn" style="background: var(--secondary-color); margin-right:8px;">Buy All</button>
+            <button id="clear-cart" class="clear-cart-btn">Clear All</button>
+        </div>
+    </div>
+    <div id="cart-overlay" class="cart-overlay"></div>
+
+    <!-- Wishlist Sidebar -->
+    <div id="wishlist-sidebar" class="wishlist-sidebar">
+        <div class="wishlist-header">
+            <h2>Your Wishlist</h2>
+            <button id="close-wishlist"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="wishlist-items" class="wishlist-items"></div>
+        <div class="wishlist-footer">
+            <button id="clear-wishlist" class="clear-wishlist-btn">Clear All</button>
+        </div>
+    </div>
+    <div id="wishlist-overlay" class="wishlist-overlay"></div>
+
+    <!-- Back to Top Button -->
+    <a href="#"><button id="back-to-top" class="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </button></a>
+
+    <!-- Order Success Modal -->
+    <section class="success-modal" id="orderSuccessModal" aria-hidden="true">
+        <div class="success-content" role="dialog" aria-modal="true" aria-labelledby="orderSuccessTitle">
+            <span class="success-icon"><i class="fa-solid fa-circle-check"></i></span>
+            <h3 id="orderSuccessTitle">Order Placed Successfully</h3>
+            <p>Thank you! We've received your order and sent a confirmation email.</p>
+            <button class="success-btn" id="orderCloseModal">Close</button>
+        </div>
+    </section>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/product-detail.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

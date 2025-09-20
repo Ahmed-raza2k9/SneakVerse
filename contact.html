@@ -4,13 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact SneakVerse for support, questions, or inquiries. We're here to help you with your sneaker needs.">
+    <meta name="keywords" content="contact sneakverse, customer support, sneaker help, sneaker inquiries">
     <title>SneakVerse - Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="/images/SV.png">
+    <link rel="icon" type="image/x-icon" href="./images/SV.png">
 </head>
 
 <body>
@@ -22,9 +27,18 @@
             <a href="./index.html">Home</a><a href="./collections.html">Collection</a><a href="./about.html">About</a><a
                 href="./contact.html">Contact</a>
         </div>
-        <div class="cart-icon">
-            <i class="fa-solid fa-cart-shopping" id="cart-btn"></i>
-            <span id="cart-count">0</span>
+        <div class="nav-right">
+            <div class="wishlist-icon">
+                <i class="fa-solid fa-heart" id="wishlist-btn"></i>
+                <span id="wishlist-count">0</span>
+            </div>
+            <div class="cart-icon">
+                <i class="fa-solid fa-bag-shopping" id="cart-btn"></i>
+                <span id="cart-count">0</span>
+            </div>
+            <div class="menu-icon">
+                <i id="menu-bar" class="fa-solid fa-bars"></i>
+            </div>
         </div>
         <div class="menu-overlay" id="menu-overlay"></div>
         <div class="menu" id="menu">
@@ -39,9 +53,6 @@
                 <a href="./contact.html"><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;Contact</a>
             </div>
         </div>
-        <div class="menu-icon">
-            <i id="menu-bar" class="fa-solid fa-bars"></i>
-        </div>
     </div>
     <div class="contact-bg">
     </div>
@@ -55,6 +66,11 @@
             <a href="#contactFormSection"><button class="scroll-btn" id="scroll-btn">
                     Contact Us <i class="fas fa-arrow-down"></i>
                 </button></a>
+            <div class="floating-elements">
+                <div class="floating-dot dot-1"></div>
+                <div class="floating-dot dot-2"></div>
+                <div class="floating-dot dot-3"></div>
+            </div>
         </div>
     </section>
     <!-- ===== Transparent Contact Section ===== -->
@@ -199,7 +215,7 @@
                 <h3>Newsletter</h3>
                 <p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>
                 <form class="newsletter-form">
-                    <input type="email" placeholder="Your email address" required>
+                    <input type="email" placeholder="Your email address">
                     <button type="submit"><i class="fas fa-paper-plane"></i></button>
                 </form>
             </div>
@@ -228,6 +244,19 @@
         </div>
     </div>
     <div id="cart-overlay" class="cart-overlay"></div>
+
+    <!-- Wishlist Sidebar -->
+    <div id="wishlist-sidebar" class="wishlist-sidebar">
+        <div class="wishlist-header">
+            <h2>Your Wishlist</h2>
+            <button id="close-wishlist"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="wishlist-items" class="wishlist-items"></div>
+        <div class="wishlist-footer">
+            <button id="clear-wishlist" class="clear-wishlist-btn">Clear All</button>
+        </div>
+    </div>
+    <div id="wishlist-overlay" class="wishlist-overlay"></div>
     <div id="cart-modal" class="cart-modal hidden">
         <p>Added to cart successfully!</p>
     </div>
