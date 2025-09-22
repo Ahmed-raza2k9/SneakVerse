@@ -1074,22 +1074,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Wishlist button
-        document.getElementById('wishlistBtn').addEventListener('click', (e) => {
-            const isLiked = e.target.classList.contains('fa-solid');
-            
+        document.getElementById('wishlistBtn').addEventListener('click', () => {
+            const wishlistBtnEl = document.getElementById('wishlistBtn');
+            const iconEl = wishlistBtnEl ? wishlistBtnEl.querySelector('i') : null;
+            if (!iconEl) return;
+
+            const isLiked = iconEl.classList.contains('fa-solid');
+
             if (isLiked) {
                 // Remove from wishlist
                 removeFromWishlist(product.id);
-                e.target.classList.remove('fa-solid');
-                e.target.classList.add('fa-regular');
-                e.target.classList.remove('active');
+                iconEl.classList.remove('fa-solid', 'active');
+                iconEl.classList.add('fa-regular');
+                wishlistBtnEl.setAttribute('aria-pressed', 'false');
                 showProfessionalNotification('Removed from wishlist', 'info');
             } else {
                 // Add to wishlist
                 addToWishlist(product);
-                e.target.classList.remove('fa-regular');
-                e.target.classList.add('fa-solid');
-                e.target.classList.add('active');
+                iconEl.classList.remove('fa-regular');
+                iconEl.classList.add('fa-solid', 'active');
+                wishlistBtnEl.setAttribute('aria-pressed', 'true');
                 showProfessionalNotification('Added to wishlist', 'success');
             }
         });
@@ -1737,18 +1741,21 @@ document.addEventListener('DOMContentLoaded', function() {
     function initializeWishlistState(product) {
         const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
         const isInWishlist = wishlist.some(item => item.id === product.id);
-        
+
         const wishlistBtn = document.getElementById('wishlistBtn');
-        if (wishlistBtn) {
+        const iconEl = wishlistBtn ? wishlistBtn.querySelector('i') : null;
+        if (iconEl && wishlistBtn) {
             if (isInWishlist) {
-                wishlistBtn.classList.remove('fa-regular');
-                wishlistBtn.classList.add('fa-solid', 'active');
+                iconEl.classList.remove('fa-regular');
+                iconEl.classList.add('fa-solid', 'active');
+                wishlistBtn.setAttribute('aria-pressed', 'true');
             } else {
-                wishlistBtn.classList.remove('fa-solid', 'active');
-                wishlistBtn.classList.add('fa-regular');
+                iconEl.classList.remove('fa-solid', 'active');
+                iconEl.classList.add('fa-regular');
+                wishlistBtn.setAttribute('aria-pressed', 'false');
             }
         }
-        
+
         updateWishlistCount();
         updateWishlistUI();
     }

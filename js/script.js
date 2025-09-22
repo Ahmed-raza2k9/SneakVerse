@@ -57,6 +57,73 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+
+    // Quick size chips -> fill input (and keep user in control to press Convert)
+    const sgChips = document.querySelectorAll('.sg-chip');
+    if (sgChips && sgChips.length) {
+        sgChips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                const val = parseFloat(chip.getAttribute('data-size') || '0');
+                const input = document.getElementById('sg-size');
+                if (input && !Number.isNaN(val) && val > 0) {
+                    input.value = String(val);
+                    input.focus();
+                }
+            });
+        });
+    }
+
+    // Fit Advisor: compute recommendation from foot length/width and preference
+    const adviseBtn = document.getElementById('sg-advise');
+    if (adviseBtn) {
+        adviseBtn.addEventListener('click', () => {
+            const lengthEl = document.getElementById('sg-foot-l');
+            const widthEl = document.getElementById('sg-foot-w');
+            const prefEl = document.getElementById('sg-fit-pref');
+            const meter = document.getElementById('sg-meter');
+            const out = document.getElementById('sg-advice');
+
+            const lengthCm = parseFloat(lengthEl?.value || '0');
+            const widthCm = parseFloat(widthEl?.value || '0');
+            const pref = prefEl?.value || 'regular';
+
+            if (!out) return;
+            if (!lengthCm || lengthCm < 15 || lengthCm > 35) {
+                out.innerHTML = '<div class="result-pill"><i class="fa-solid fa-circle-exclamation"></i> Enter valid foot length in cm (15 - 35)</div>';
+                if (meter) meter.style.width = '0%';
+                return;
+            }
+
+            // Rough US conversion from foot length (cm). This is approximate for demo.
+            // US size ≈ (cm - 18) / 0.667
+            let usSize = Math.round(((lengthCm - 18) / 0.667) * 2) / 2; // round to nearest 0.5
+
+            // Adjust for fit preference
+            if (pref === 'snug') usSize -= 0.5;
+            if (pref === 'loose') usSize += 0.5;
+
+            // Width category
+            let widthNote = 'Regular width recommended';
+            let meterPct = 50;
+            if (widthCm && widthCm > 0) {
+                if (widthCm < 9.5) { widthNote = 'Consider narrow fit (N)'; meterPct = 35; }
+                else if (widthCm > 10.5) { widthNote = 'Consider wide fit (W)'; meterPct = 70; }
+                else { widthNote = 'Regular width recommended'; meterPct = 50; }
+            }
+
+            if (meter) meter.style.width = `${meterPct}%`;
+
+            const uk = Math.max(1, usSize - 1);
+            const eu = Math.round((usSize + 33) * 1.5);
+            const cm = Math.round(usSize * 2.54);
+
+            out.innerHTML = `
+                <div class="result-pill"><i class="fa-solid fa-shoe-prints"></i> Recommended US: <strong>${usSize}</strong></div>
+                <div class="result-pill">UK: <strong>${uk}</strong> &nbsp; EU: <strong>${eu}</strong> &nbsp; CM: <strong>${cm}</strong></div>
+                <div class="result-pill"><i class="fa-solid fa-ruler-horizontal"></i> ${widthNote}</div>
+            `;
+        });
+    }
     // Jab page load hoga to overlay hatao
     window.addEventListener("load", () => {
         overlay.classList.remove("active");
@@ -114,6 +181,7 @@ document.addEventListener('DOMContentLoaded', function () {
             btn.addEventListener('click', (e) => {
                 const idx = parseInt(btn.getAttribute('data-index'));
                 const selected = cart[idx];
+                if (buyModal) buyModal.dataset.singleIndex = String(idx);
                 openBuyModal(selected);
             });
         });
@@ -211,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const itemDiv = document.createElement('div');
                 itemDiv.className = 'buy-select-item';
                 itemDiv.innerHTML = `
-                    <input type="checkbox" id="item-${index}" checked>
+                    <input type="checkbox" id="item-${index}" data-index="${index}" checked>
                     <label for="item-${index}">
                         <img src="${item.image}" alt="${item.name}">
                         <div>
@@ -226,6 +294,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (selectBox) selectBox.classList.add('hidden');
             if (selectList) selectList.innerHTML = '';
         }
+        // Clear any single selection index when in multi-select mode
+        if (buyModal) delete buyModal.dataset.singleIndex;
         
         // Update modal content with first item or total
         const buyModalItem = document.getElementById('buyModalItem');
@@ -413,22 +483,28 @@ document.addEventListener('DOMContentLoaded', function () {
             const isMulti = selectBox && !selectBox.classList.contains('hidden');
             if (isMulti) {
                 const checks = Array.from(document.querySelectorAll('#buySelectList input[type="checkbox"]'));
-                const selectedNames = checks
+                const selectedIndices = checks
                     .filter(c => c.checked)
-                    .map(c => {
-                        const idx = parseInt(c.dataset.index);
-                        return cart[idx]?.name;
-                    })
-                    .filter(Boolean);
-                if (selectedNames.length) {
-                    cart = cart.filter(item => !selectedNames.includes(item.name));
+                    .map(c => parseInt(c.dataset.index))
+                    .filter(n => !Number.isNaN(n));
+                if (selectedIndices.length) {
+                    cart = cart.filter((_, idx) => !selectedIndices.includes(idx));
                     updateCartUI();
                 }
             } else {
-                const currentName = buyModalItem?.textContent || '';
-                if (currentName) {
-                    cart = cart.filter(item => item.name !== currentName);
-                    updateCartUI();
+                const singleIndexAttr = buyModal?.dataset?.singleIndex;
+                if (singleIndexAttr !== undefined) {
+                    const idx = parseInt(singleIndexAttr);
+                    if (!Number.isNaN(idx)) {
+                        cart.splice(idx, 1);
+                        updateCartUI();
+                    }
+                } else {
+                    const currentName = buyModalItem?.textContent || '';
+                    if (currentName) {
+                        cart = cart.filter(item => item.name !== currentName);
+                        updateCartUI();
+                    }
                 }
             }
             closeBuyModal();
