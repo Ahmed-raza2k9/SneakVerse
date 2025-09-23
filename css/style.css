@@ -1925,7 +1925,48 @@ body::after {
   inset: 0;
   background: transparent; /* fully transparent overlay */
   z-index: 2; /* above iframe */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.ar-overlay-btn {
+  background: rgba(255, 255, 255, 0.062);
+  color: var(--primary-color);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  transition: transform .15s ease, box-shadow .15s ease;
+  backdrop-filter: blur(10px);
+}
+
+.ar-overlay-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(0,0,0,0.28); }
+.ar-overlay-btn:active { transform: translateY(0); box-shadow: 0 6px 18px rgba(0,0,0,0.25); }
+
+.ar-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  z-index: 3;/* above overlay */
+}
+
+.ar-close-btn:hover { background: rgba(0,0,0,0.75); }
 
 @media (max-width: 992px) {
   .ar-container {

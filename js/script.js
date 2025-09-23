@@ -1083,6 +1083,22 @@ document.addEventListener('DOMContentLoaded', function () {
                     e.preventDefault();
                 }, { passive: false });
             });
+
+            // AR overlay open/close behavior
+            const openBtn = document.getElementById('ar-overlay-open');
+            const closeBtn = document.getElementById('ar-overlay-close');
+            const blocker = document.querySelector('.ar-blocker');
+            if (openBtn && closeBtn && blocker) {
+                openBtn.addEventListener('click', function(e){
+                    e.preventDefault();
+                    blocker.style.display = 'none';
+                    closeBtn.style.display = 'inline-flex';
+                });
+                closeBtn.addEventListener('click', function(){
+                    blocker.style.display = 'flex';
+                    closeBtn.style.display = 'none';
+                });
+            }
         }
     } catch (e) {}
 });
