@@ -1043,7 +1043,35 @@ document.addEventListener('DOMContentLoaded', function() {
             quantityDisplay.textContent = quantity;
         });
 
-        // Add to cart button removed
+        // Add to cart button
+        const addToCartBtn = document.getElementById('addToCartBtn');
+        if (addToCartBtn) {
+            addToCartBtn.addEventListener('click', () => {
+                const selectedSize = document.querySelector('.size-option.active')?.dataset.size;
+                const selectedColor = document.querySelector('.color-option.active')?.dataset.color;
+                const quantity = parseInt(document.getElementById('quantityDisplay').textContent) || 1;
+
+                if (!selectedSize) {
+                    const sizeContainer = document.getElementById('sizeOptions');
+                    if (sizeContainer) {
+                        showProductFieldError(sizeContainer, 'Please select a size before adding to cart');
+                    }
+                    return;
+                }
+
+                const cartItem = {
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: document.getElementById('main-product-image')?.src || product.image,
+                    quantity: quantity,
+                    size: selectedSize,
+                    color: selectedColor
+                };
+
+                addToCartFromDetail(cartItem);
+            });
+        }
 
         // Buy now button
         document.getElementById('buyNowBtn').addEventListener('click', () => {
@@ -1382,8 +1410,15 @@ document.addEventListener('DOMContentLoaded', function() {
         // Save to localStorage
         localStorage.setItem('cart', JSON.stringify(cart));
         
-        // Update cart count in navigation
+        // Keep global cart (from main script) in sync if present
+        try { if (typeof window !== 'undefined') { window.cart = cart; } } catch(e) {}
+        
+        // Update cart UI and count
+        try { if (typeof updateCartUI === 'function') updateCartUI(); } catch(e) {}
         updateCartCount();
+        
+        // Notify other listeners (e.g., main script)
+        try { window.dispatchEvent(new Event('cartUpdated')); } catch(e) {}
         
         // Show success notification
         showProfessionalNotification('Added to cart successfully!', 'success');
@@ -1411,8 +1446,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Save to localStorage
         localStorage.setItem('cart', JSON.stringify(cart));
         
-        // Update cart count in navigation
+        // Keep global cart in sync and refresh UI silently
+        try { if (typeof window !== 'undefined') { window.cart = cart; } } catch(e) {}
+        try { if (typeof updateCartUI === 'function') updateCartUI(); } catch(e) {}
         updateCartCount();
+        try { window.dispatchEvent(new Event('cartUpdated')); } catch(e) {}
         
         // No notification shown - this is for order placement
     }

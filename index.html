@@ -82,63 +82,7 @@
     </div>
     <div class="new-collections-ctn">
         <h1 data-aos="fade-in" data-aos-duration="1000">New Collections</h1>
-
-        <div class="new-collections-cards">
-            <div class="new-collections-card card" data-aos="fade-up" data-aos-duration="1000">
-                <img src="./images/nike-vomero-18-57k.png" alt="Nike Vomero 18 Running Shoe" class="card-image">
-                <h3>NIKE VOMERO 18</h3>
-                <p>$200</p>
-                <div class="card-actions">
-                    <button class="add-to-cart-btn">ADD TO CART</button>
-                    <button class="view-details-btn" data-product-id="nike-vomero-18">VIEW DETAILS</button>
-                </div>
-            </div>
-            <div class="new-collections-card card" data-aos="fade-up" data-aos-duration="2000">
-                <img src="./images/nike-air-zoom-upturn-sc-38k.png" alt="Nike Air Zoom SC Running Shoe" class="card-image">
-                <h3>NIKE AIR ZOOM SC</h3>
-                <p>$145</p>
-                <div class="card-actions">
-                    <button class="add-to-cart-btn">ADD TO CART</button>
-                    <button class="view-details-btn" data-product-id="nike-air-zoom-sc">VIEW DETAILS</button>
-                </div>
-            </div>
-            <div class="new-collections-card card" data-aos="fade-up" data-aos-duration="3000">
-                <img src="./images/nike-air-max-excee-32k.png" alt="Nike Air Max Excee Sneaker" class="card-image">
-                <h3>NIKE AIR MAX EXCEE</h3>
-                <p>$110</p>
-                <div class="card-actions">
-                    <button class="add-to-cart-btn">ADD TO CART</button>
-                    <button class="view-details-btn" data-product-id="nike-air-max-excee">VIEW DETAILS</button>
-                </div>
-            </div>
-            <div class="new-collections-card card" data-aos="fade-up" data-aos-duration="1000">
-                <img src="./images/nike-quest-6-35k.png" alt="Nike Quest 6 Running Shoe" class="card-image">
-                <h3>NIKE QUEST 6</h3>
-                <p>$129</p>
-                <div class="card-actions">
-                    <button class="add-to-cart-btn">ADD TO CART</button>
-                    <button class="view-details-btn" data-product-id="nike-quest-6">VIEW DETAILS</button>
-                </div>
-            </div>
-            <div class="new-collections-card card" data-aos="fade-up" data-aos-duration="2000">
-                <img src="./images/nike-air-max-sc-18k.png" alt="Sneaker 2" class="card-image">
-                <h3>NIKE AIR MAX SC</h3>
-                <p>$85</p>
-                <div class="card-actions">
-                    <button class="add-to-cart-btn">ADD TO CART</button>
-                    <button class="view-details-btn" data-product-id="nike-air-max-sc">VIEW DETAILS</button>
-                </div>
-            </div>
-            <div class="new-collections-card card" data-aos="fade-up" data-aos-duration="3000">
-                <img src="./images/nike-air-max-sc-18k.png" alt="Nike Air Max SC Sneaker" class="card-image">
-                <h3>NIKE AIR MAX SC</h3>
-                <p>$85</p>
-                <div class="card-actions">
-                    <button class="add-to-cart-btn">ADD TO CART</button>
-                    <button class="view-details-btn" data-product-id="nike-air-max-sc">VIEW DETAILS</button>
-                </div>
-            </div>
-        </div>
+        <div class="new-collections-cards" id="home-new-collections"></div>
     </div>
     <div class="video-ctn">
         <div class="animated-video">
@@ -177,15 +121,8 @@
             <div class="ar-text">
                 <h2>Experience Sneaker <span>Like Never Before</span></h2>
                 <p>Rotate, zoom, and explore every detail of our latest drop — all from your browser.</p>
-                <button class="ar-btn" id="view-ar-btn">View in AR</button>
             </div>
-            <div class="ar-model">
-                <img src="./images/nike-vomero-18-57k.png" alt="Sneaker Preview" id="sneaker-img">
-                <div class="ar-controls">
-                    <button id="rotate-left">&#8592;</button>
-                    <button id="rotate-right">&#8594;</button>
-                </div>
-            </div>
+            <div class="sketchfab-embed-wrapper"> <iframe title="Adidas Racer TR21" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="480" height="477" src="https://sketchfab.com/models/bc0d0141da164d3c9f9fe71f6f340c9b/embed?autospin=1&autostart=1&preload=1&transparent=1&ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0"> </iframe> </div>
         </div>
     </section>
 
@@ -290,7 +227,7 @@
                     <p class="buy-note">Secure checkout. No extra fees.</p>
                 </div>
                 <div class="buy-right">
-                    <form id="checkout-form">
+                    <form id="checkout-form" novalidate>
                         <div class="form-group">
                             <label for="checkout-name">Full Name</label>
                             <input type="text" id="checkout-name" name="name">
@@ -428,6 +365,26 @@
         </div>
     </section>
 
+    <script src="./components/home-cards.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            try {
+                var container = document.getElementById('home-new-collections');
+                if (!container || !window.HOME_CARDS) return;
+                container.innerHTML = '';
+                window.HOME_CARDS.forEach(function(card){
+                    var div = document.createElement('div');
+                    div.className = 'new-collections-card card nc-card';
+                    div.setAttribute('data-aos','fade-up');
+                    div.setAttribute('data-aos-duration', String(card.aosDuration || 1000));
+                    var badge = 'New';
+                    div.innerHTML = '\n                <div class="nc-image-wrap">\n                    <span class="nc-badge">'+badge+'</span>\n                    <img src="'+card.image+'" alt="'+card.name+'" class="card-image">\n                </div>\n                <div class="nc-content">\n                    <h3 class="nc-title">'+card.name+'</h3>\n                    <p class="card-desc">'+card.desc+'</p>\n                    <div class="nc-meta">\n                        <p class="price">$'+card.price+'</p>\n                    </div>\n                    <div class="card-actions nc-actions">\n                        <button class="add-to-cart-btn" data-product-id="'+card.id+'"><i class=\"fa-solid fa-cart-plus\"></i> Add to Cart</button>\n                        <button class="view-details-btn" data-product-id="'+card.id+'">View Details</button>\n                    </div>\n                </div>';
+                    container.appendChild(div);
+                });
+                if (window.AOS && AOS.refresh) { AOS.refresh(); }
+            } catch (e) {}
+        });
+    </script>
     <script src="./js/script.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>

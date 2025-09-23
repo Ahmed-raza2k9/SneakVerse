@@ -1061,15 +1061,42 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     });
+    // Disable zoom on Sketchfab iframe while allowing rotation/move
+    try {
+        const sketchfabIframe = document.querySelector('.sketchfab-embed-wrapper iframe');
+        if (sketchfabIframe) {
+            // Block mouse wheel zoom
+            sketchfabIframe.addEventListener('wheel', function (e) {
+                e.preventDefault();
+            }, { passive: false });
+
+            // Block pinch-zoom (multi-touch) but allow single-finger drag/rotate
+            sketchfabIframe.addEventListener('touchmove', function (e) {
+                if (e.touches && e.touches.length > 1) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
+
+            // iOS Safari specific gesture events
+            ['gesturestart', 'gesturechange', 'gestureend'].forEach(function(evt){
+                sketchfabIframe.addEventListener(evt, function (e) {
+                    e.preventDefault();
+                }, { passive: false });
+            });
+        }
+    } catch (e) {}
 });
-// Sneaker AR Preview Rotation
+// Sneaker AR Preview Rotation (guarded when image controls are absent)
 document.addEventListener("DOMContentLoaded", () => {
     const sneakerImg = document.getElementById("sneaker-img");
     const rotateLeft = document.getElementById("rotate-left");
     const rotateRight = document.getElementById("rotate-right");
+    const viewArBtn = document.getElementById("view-ar-btn");
     let angle = 0;
+    let rotating = false;
+    let rotationInterval;
 
-    if (sneakerImg && rotateLeft && rotateRight) {
+    if (sneakerImg && rotateLeft && rotateRight && viewArBtn) {
         rotateLeft.addEventListener("click", () => {
             angle -= 15;
             sneakerImg.style.transform = `rotateY(${angle}deg)`;
@@ -1079,26 +1106,22 @@ document.addEventListener("DOMContentLoaded", () => {
             angle += 15;
             sneakerImg.style.transform = `rotateY(${angle}deg)`;
         });
+
+        viewArBtn.addEventListener("click", () => {
+            if (!rotating) {
+                rotationInterval = setInterval(() => {
+                    angle += 2;
+                    sneakerImg.style.transform = `rotateY(${angle}deg)`;
+                }, 50);
+                rotating = true;
+                viewArBtn.textContent = "Stop AR";
+            } else {
+                clearInterval(rotationInterval);
+                rotating = false;
+                viewArBtn.textContent = "View in AR";
+            }
+        });
     }
-    const viewArBtn = document.getElementById("view-ar-btn");
-    let rotating = false;
-    let rotationInterval;
-
-
-    viewArBtn.addEventListener("click", () => {
-        if (!rotating) {
-            rotationInterval = setInterval(() => {
-                angle += 2;
-                sneakerImg.style.transform = `rotateY(${angle}deg)`;
-            }, 50);
-            rotating = true;
-            viewArBtn.textContent = "Stop AR";
-        } else {
-            clearInterval(rotationInterval);
-            rotating = false;
-            viewArBtn.textContent = "View in AR";
-        }
-    });
 });
 // Products Filter Functionality
 document.addEventListener('DOMContentLoaded', function () {

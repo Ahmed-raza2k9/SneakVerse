@@ -53,6 +53,12 @@
         </div>
     </div>
 
+    <!-- Background Video (same as collections) -->
+    <div class="detail-bg-video" aria-hidden="true">
+        <video src="./videos/3d animated video.mp4" autoplay muted loop playsinline></video>
+        <div class="detail-video-overlay"></div>
+    </div>
+
     <!-- Product Detail Section -->
     <section class="product-detail-section" id="productDetail">
         <div class="product-detail-container">
@@ -186,6 +192,10 @@
                         <button class="buy-now-btn secondary-btn" id="buyNowBtn">
                             <i class="fa-solid fa-bolt"></i>
                             Buy Now
+                        </button>
+                        <button class="primary-btn" id="addToCartBtn">
+                            <i class="fa-solid fa-cart-plus"></i>
+                            Add to Cart
                         </button>
                         <button class="wishlist-btn" id="wishlistBtn">
                             <i class="fa-regular fa-heart"></i>
@@ -432,7 +442,7 @@
                     <p class="buy-note">Secure checkout. No extra fees.</p>
                 </div>
                 <div class="buy-right">
-                    <form id="checkout-form">
+                    <form id="checkout-form" novalidate>
                         <div class="form-group">
                             <label for="checkout-name">Full Name</label>
                             <input type="text" id="checkout-name" name="name">
