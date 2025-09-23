@@ -1900,6 +1900,58 @@ body::after {
   background: var(--secondary-color);
 }
 
+/* Responsive AR embed (Sketchfab) */
+.sketchfab-embed-wrapper {
+  flex: 1;
+  min-width: 300px;
+  max-width: 640px; /* fixed max width for consistent model size */
+  width: 100%;
+  aspect-ratio: 1 / 1; /* square keeps predictable height */
+  position: relative;
+  margin: 0 auto;
+}
+
+.sketchfab-embed-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.sketchfab-embed-wrapper .ar-blocker {
+  position: absolute;
+  inset: 0;
+  background: transparent; /* fully transparent overlay */
+  z-index: 2; /* above iframe */
+}
+
+@media (max-width: 992px) {
+  .ar-container {
+    gap: 28px;
+  }
+  .sketchfab-embed-wrapper {
+    max-width: 520px;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .ar-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .ar-text {
+    text-align: left;
+  }
+  .sketchfab-embed-wrapper {
+    min-width: 100%;
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+  }
+}
+
 /* Collections Hero Started */
 .collections-hero {
   position: relative;
