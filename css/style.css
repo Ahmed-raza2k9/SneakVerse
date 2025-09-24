@@ -2059,7 +2059,7 @@ body::after {
   height: 100vh;
   background: rgba(0, 0, 0, 0.6);
   z-index: -1;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(4px);
 }
 
 /* collections content started */
