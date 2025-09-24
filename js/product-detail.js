@@ -44,19 +44,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     name: 'Alex Johnson',
                     rating: 5,
-                    date: '2024-01-15',
+                    date: '2025-10-15',
                     comment: 'Amazing comfort! Perfect for my daily runs. The cushioning is incredible.'
                 },
                 {
                     name: 'Sarah Chen',
                     rating: 5,
-                    date: '2024-01-10',
+                    date: '2025-10-10',
                     comment: 'Great shoe, very comfortable and stylish. Highly recommend!'
                 },
                 {
                     name: 'Mike Rodriguez',
                     rating: 4,
-                    date: '2024-01-05',
+                    date: '2025-10-05',
                     comment: 'Good quality and fit. Slightly narrow but overall satisfied.'
                 }
             ]
@@ -103,13 +103,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     name: 'David Kim',
                     rating: 5,
-                    date: '2024-01-12',
+                    date: '2025-10-12',
                     comment: 'Super lightweight and responsive. Perfect for speed work!'
                 },
                 {
                     name: 'Emma Wilson',
                     rating: 4,
-                    date: '2024-01-08',
+                    date: '2025-10-08',
                     comment: 'Great shoe for training. Very comfortable and stylish.'
                 }
             ]
@@ -156,13 +156,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     name: 'Chris Taylor',
                     rating: 4,
-                    date: '2024-01-14',
+                    date: '2025-10-14',
                     comment: 'Classic Air Max feel with modern comfort. Great for casual wear.'
                 },
                 {
                     name: 'Lisa Park',
                     rating: 5,
-                    date: '2024-01-09',
+                    date: '2025-10-09',
                     comment: 'Love the classic look and the comfort is amazing!'
                 }
             ]
@@ -209,13 +209,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     name: 'James Brown',
                     rating: 4,
-                    date: '2024-01-11',
+                    date: '2025-10-11',
                     comment: 'Great value for money. Comfortable and reliable for daily runs.'
                 },
                 {
                     name: 'Maria Garcia',
                     rating: 5,
-                    date: '2024-01-07',
+                    date: '2025-10-07',
                     comment: 'Perfect shoe for my training. Very comfortable and durable.'
                 }
             ]
@@ -262,13 +262,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     name: 'Robert Lee',
                     rating: 4,
-                    date: '2024-01-13',
+                    date: '2025-10-13',
                     comment: 'Classic Air Max style at a great price. Very comfortable!'
                 },
                 {
                     name: 'Jennifer White',
                     rating: 5,
-                    date: '2024-01-06',
+                    date: '2025-10-06',
                     comment: 'Love the classic look and the comfort is amazing!'
                 }
             ]
@@ -315,13 +315,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     name: 'Marcus Johnson',
                     rating: 5,
-                    date: '2024-01-12',
+                    date: '2025-10-12',
                     comment: 'Classic shoe that never goes out of style. Perfect for any occasion!'
                 },
                 {
                     name: 'Sarah Davis',
                     rating: 4,
-                    date: '2024-01-08',
+                    date: '2025-10-08',
                     comment: 'Great quality and comfort. Love the classic look!'
                 }
             ]
@@ -368,13 +368,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     name: 'Alex Chen',
                     rating: 5,
-                    date: '2024-01-11',
+                    date: '2025-10-11',
                     comment: 'Amazing comfort and futuristic look. Perfect for running!'
                 },
                 {
                     name: 'Lisa Wang',
                     rating: 4,
-                    date: '2024-01-07',
+                    date: '2025-10-07',
                     comment: 'Great shoe with excellent cushioning. Very comfortable!'
                 }
             ]
@@ -421,13 +421,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     name: 'David Kim',
                     rating: 5,
-                    date: '2024-01-10',
+                    date: '2025-10-10',
                     comment: 'Incredible speed and responsiveness. Perfect for racing!'
                 },
                 {
                     name: 'Emma Rodriguez',
                     rating: 4,
-                    date: '2024-01-06',
+                    date: '2025-10-06',
                     comment: 'Great performance shoe with excellent energy return!'
                 }
             ]
@@ -474,7 +474,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     name: 'Michael Brown',
                     rating: 5,
-                    date: '2024-01-09',
+                    date: '2025-10-09',
                     comment: 'Classic design with great comfort. Perfect for casual wear!'
                 }
             ]
@@ -521,7 +521,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     name: 'Jessica Taylor',
                     rating: 5,
-                    date: '2024-01-08',
+                    date: '2025-10-08',
                     comment: 'Perfect fit and amazing comfort. Love the women-specific design!'
                 }
             ]
@@ -616,13 +616,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     name: 'Sarah Johnson',
                     rating: 5,
-                    date: '2024-01-12',
+                    date: '2025-10-12',
                     comment: 'My son loves these shoes! Great quality and very comfortable for active kids.'
                 },
                 {
                     name: 'Mike Chen',
                     rating: 4,
-                    date: '2024-01-08',
+                    date: '2025-10-08',
                     comment: 'Perfect for my daughter. Easy to put on and very durable.'
                 }
             ]
@@ -669,7 +669,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     name: 'Lisa Wang',
                     rating: 5,
-                    date: '2024-01-11',
+                    date: '2025-10-11',
                     comment: 'Great shoes for my active 8-year-old. Very comfortable and durable!'
                 }
             ]
@@ -716,7 +716,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     name: 'David Kim',
                     rating: 4,
-                    date: '2024-01-10',
+                    date: '2025-10-10',
                     comment: 'My son loves the classic Air Max look. Great quality for the price!'
                 }
             ]
@@ -763,7 +763,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     name: 'Emma Rodriguez',
                     rating: 5,
-                    date: '2024-01-09',
+                    date: '2025-10-09',
                     comment: 'Amazing comfort for my daughter. She loves the colorful design!'
                 }
             ]
@@ -810,7 +810,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     name: 'James Wilson',
                     rating: 4,
-                    date: '2024-01-08',
+                    date: '2025-10-08',
                     comment: 'Great performance shoe for my active son. Very comfortable and responsive!'
                 }
             ]

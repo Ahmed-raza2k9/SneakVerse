@@ -232,8 +232,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.updateCartCount = function() {
         const cartCount = document.getElementById('cart-count');
         if (cartCount) {
-            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-            cartCount.textContent = totalItems;
+            cartCount.textContent = cart.length;
         }
     }
 
@@ -652,17 +651,37 @@ document.addEventListener('DOMContentLoaded', function () {
             
             const name =
                 productCard.querySelector("h3, h1")?.textContent || "Sneaker";
-            const price =
-                productCard.querySelector("p, h4")?.textContent.replace("$", "") || 0;
+            // Robust price extraction: look for common price selectors, then fallback to any $ text
+            let priceText = "";
+            const priceEl = 
+                productCard.querySelector('.cx-price') ||
+                productCard.querySelector('.price') ||
+                productCard.querySelector('.rating-price strong') ||
+                productCard.querySelector('.nc-meta .price') ||
+                productCard.querySelector('[class*="price"]');
+            if (priceEl && priceEl.textContent) {
+                priceText = priceEl.textContent;
+            } else {
+                // Fallback: find the first element containing a $ amount
+                const candidate = Array.from(productCard.querySelectorAll('*'))
+                    .map(el => el.textContent || '')
+                    .find(t => /\$\s*\d/.test(t));
+                if (candidate) priceText = candidate;
+            }
+            const priceMatch = priceText.match(/([\d.,]+)(?=\s*$|[^\d.,])/);
+            let price = 0;
+            if (priceMatch) {
+                price = parseFloat(priceMatch[1].replace(/,/g, ''));
+            }
             const image = productCard.querySelector("img")?.src || "";
             const productId = btn.getAttribute("data-product-id") || name.toLowerCase().replace(/\s+/g, '-');
 
             const product = { 
                 id: productId,
                 name, 
-                price: parseFloat(price), 
+                price: price, 
                 image,
-                originalPrice: parseFloat(price) * 1.25
+                originalPrice: price ? price * 1.25 : undefined
             };
             
             openAddToCartModal(product);
