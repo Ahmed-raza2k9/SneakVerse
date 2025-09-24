@@ -1808,23 +1808,29 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (wishlistBtn) {
             wishlistBtn.addEventListener('click', () => {
-                wishlistSidebar.classList.add('active');
-                wishlistOverlay.classList.add('active');
                 updateWishlistUI();
+                requestAnimationFrame(() => {
+                    wishlistSidebar.classList.add('active');
+                    wishlistOverlay.classList.add('active');
+                });
             });
         }
         
         if (closeWishlist) {
             closeWishlist.addEventListener('click', () => {
-                wishlistSidebar.classList.remove('active');
-                wishlistOverlay.classList.remove('active');
+                requestAnimationFrame(() => {
+                    wishlistSidebar.classList.remove('active');
+                    wishlistOverlay.classList.remove('active');
+                });
             });
         }
         
         if (wishlistOverlay) {
             wishlistOverlay.addEventListener('click', () => {
-                wishlistSidebar.classList.remove('active');
-                wishlistOverlay.classList.remove('active');
+                requestAnimationFrame(() => {
+                    wishlistSidebar.classList.remove('active');
+                    wishlistOverlay.classList.remove('active');
+                });
             });
         }
         
@@ -1858,23 +1864,29 @@ function setupCartSidebar() {
     
     if (cartBtn) {
         cartBtn.addEventListener('click', () => {
-            cartSidebar.classList.add('active');
-            cartOverlay.classList.add('active');
             updateCartUI();
+            requestAnimationFrame(() => {
+                cartSidebar.classList.add('active');
+                cartOverlay.classList.add('active');
+            });
         });
     }
     
     if (closeCart) {
         closeCart.addEventListener('click', () => {
-            cartSidebar.classList.remove('active');
-            cartOverlay.classList.remove('active');
+            requestAnimationFrame(() => {
+                cartSidebar.classList.remove('active');
+                cartOverlay.classList.remove('active');
+            });
         });
     }
     
     if (cartOverlay) {
         cartOverlay.addEventListener('click', () => {
-            cartSidebar.classList.remove('active');
-            cartOverlay.classList.remove('active');
+            requestAnimationFrame(() => {
+                cartSidebar.classList.remove('active');
+                cartOverlay.classList.remove('active');
+            });
         });
     }
     

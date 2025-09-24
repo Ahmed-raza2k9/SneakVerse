@@ -359,18 +359,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // ==================== SIDEBAR TOGGLE ====================
     cartBtn.addEventListener("click", () => {
-        cartSidebar.classList.add("active");
-        cartOverlay.classList.add("active");
+        // Prepare UI first
+        updateCartUI();
+        // Open on next frame for smoother transition
+        requestAnimationFrame(() => {
+            cartSidebar.classList.add("active");
+            cartOverlay.classList.add("active");
+        });
     });
 
     closeCart.addEventListener("click", () => {
-        cartSidebar.classList.remove("active");
-        cartOverlay.classList.remove("active");
+        requestAnimationFrame(() => {
+            cartSidebar.classList.remove("active");
+            cartOverlay.classList.remove("active");
+        });
     });
 
     cartOverlay.addEventListener("click", () => {
-        cartSidebar.classList.remove("active");
-        cartOverlay.classList.remove("active");
+        requestAnimationFrame(() => {
+            cartSidebar.classList.remove("active");
+            cartOverlay.classList.remove("active");
+        });
     });
 
     // Close buy modal via X and backdrop
