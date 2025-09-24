@@ -444,6 +444,8 @@ body::after {
   opacity: 1;
 }
 
+/* removed icon spacing for desktop nav links */
+
 .menu {
   display: none;
   position: fixed;
@@ -1100,6 +1102,44 @@ body::after {
 .hero-image::before,
 .hero-image::after {
   pointer-events: none;
+}
+
+/* Surface ellipse shadow under the hero image */
+.hero-surface {
+  position: absolute;
+  bottom: clamp(-8px, -1.5vh, -2px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(220px, 46vw, 720px);
+  height: clamp(28px, 8vw, 120px);
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center,
+      rgba(146, 130, 107, 0.28) 0%,
+      rgba(49, 49, 49, 0.22) 30%,
+      rgba(0, 0, 0, 0.14) 55%,
+      rgba(41, 41, 41, 0.08) 75%,
+      rgba(32, 32, 32, 0.02) 92%,
+      rgba(32, 32, 32, 0) 100%);
+  filter: blur(20px);
+  opacity: 0.95;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .hero-surface {
+    width: clamp(200px, 70vw, 520px);
+    height: clamp(22px, 10vw, 90px);
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-surface {
+    width: clamp(160px, 82vw, 440px);
+    height: clamp(18px, 12vw, 80px);
+    opacity: 0.45;
+  }
 }
 
 /* Floating Elements */
@@ -5644,7 +5684,7 @@ body::after {
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 30px;
 }
 
 .cart-icon {

@@ -138,15 +138,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeCart = document.getElementById("close-cart");
     const cartItemsContainer = document.getElementById("cart-items");
     const cartCount = document.getElementById("cart-count");
+    const cartIconContainer = document.querySelector('.cart-icon');
     const clearCartBtn = document.getElementById("clear-cart");
     // Buy modal elements
     const buyModal = document.getElementById('buy-modal');
     const buyClose = document.getElementById('buy-close');
     const buyModalItem = document.getElementById('buyModalItem');
     const checkoutForm = document.getElementById('checkout-form');
-    cartCount.addEventListener('click', () => {
-        cartBtn.click();
-    });
+    cartCount.addEventListener('click', () => { cartBtn.click(); });
+    if (cartIconContainer && cartBtn) {
+        cartIconContainer.addEventListener('click', (e) => {
+            if (e.target === cartIconContainer) { cartBtn.click(); }
+        });
+    }
 
     // ==================== UPDATE CART UI ====================
     window.updateCartUI = function() {
@@ -694,6 +698,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeWishlist = document.getElementById('close-wishlist');
     const wishlistItemsContainer = document.getElementById('wishlist-items');
     const wishlistCount = document.getElementById('wishlist-count');
+    const wishlistIconContainer = document.querySelector('.wishlist-icon');
+    if (wishlistCount && wishlistBtn) {
+        wishlistCount.addEventListener('click', () => { wishlistBtn.click(); });
+    }
+    if (wishlistIconContainer && wishlistBtn) {
+        wishlistIconContainer.addEventListener('click', (e) => {
+            if (e.target === wishlistIconContainer) { wishlistBtn.click(); }
+        });
+    }
     const clearWishlistBtn = document.getElementById('clear-wishlist');
 
     // Update wishlist count
@@ -862,6 +875,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var menuClose = document.getElementById('menu-close');
     var menu = document.getElementById('menu');
     var menuOverlay = document.getElementById('menu-overlay');
+    var menuIconContainer = document.querySelector('.menu-icon');
 
     // Function to open menu
     function openMenu() {
@@ -894,6 +908,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Event listeners
     menuBar.addEventListener('click', openMenu);
+    if (menuIconContainer && menuBar) {
+        menuIconContainer.addEventListener('click', function(e){
+            if (e.target === menuIconContainer) { menuBar.click(); }
+        });
+    }
     menuClose.addEventListener('click', closeMenu);
     menuOverlay.addEventListener('click', closeMenu);
 
