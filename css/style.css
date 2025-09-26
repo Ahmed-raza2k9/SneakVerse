@@ -2187,6 +2187,7 @@ body::after {
 .products-section {
   width: 100%;
   min-height: 100vh;
+  height: auto;
   padding: 80px 0;
   background-color: rgba(0, 0, 0, 0.356);
   backdrop-filter: blur(8px);
@@ -2224,6 +2225,65 @@ body::after {
   margin-bottom: 50px;
 }
 
+/* Allow wrapping of filter buttons on small screens */
+@media (max-width: 640px) {
+  .filter-menu {
+    flex-wrap: wrap;
+    row-gap: 12px;
+  }
+}
+
+/* Filter toolbar: buttons + search */
+.filter-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.filter-toolbar .filter-menu {
+  margin-bottom: 0;
+}
+
+.filter-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 10px 14px;
+  border-radius: 30px;
+}
+
+.filter-search i {
+  color: var(--secondary-color);
+}
+
+.filter-search input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--primary-color);
+  min-width: 220px;
+}
+
+@media (max-width: 768px) {
+  .filter-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .filter-search {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .filter-search input {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
 .filter-btn {
   background-color: rgba(255, 255, 255, 0.1);
   color: var(--primary-color);
@@ -2254,6 +2314,25 @@ body::after {
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   margin-top: 20px;
+}
+
+/* Responsive products grid */
+@media (max-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .product-card {

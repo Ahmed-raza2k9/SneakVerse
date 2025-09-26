@@ -1190,42 +1190,49 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener('DOMContentLoaded', function () {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const productCards = document.querySelectorAll('.product-card');
+    const searchInput = document.getElementById('product-search');
 
-    // Filter products based on category
-    function filterProducts(category) {
+    function applyFilters() {
+        const activeBtn = document.querySelector('.filter-btn.active');
+        const activeCategory = activeBtn ? activeBtn.dataset.filter : 'all';
+        const searchText = (searchInput && searchInput.value || '').trim().toLowerCase();
+
         productCards.forEach(card => {
-            // First remove all cards from view with a fade out
+            const matchesCategory = (activeCategory === 'all' || card.dataset.category === activeCategory);
+            const titleEl = card.querySelector('.cx-title');
+            const nameText = titleEl ? titleEl.textContent.trim().toLowerCase() : '';
+            const matchesSearch = (searchText === '' || nameText.includes(searchText));
+
             card.classList.remove('show');
             card.classList.add('hide');
 
-            // Show all products if 'all' category is selected
-            // or show only products that match the selected category
             setTimeout(() => {
-                if (category === 'all' || card.dataset.category === category) {
+                if (matchesCategory && matchesSearch) {
                     card.classList.remove('hide');
                     card.classList.add('show');
                 }
-            }, 300); // Short delay for animation effect
+            }, 300);
         });
     }
 
-    // Add click event to filter buttons
+    // Category filter events
     filterBtns.forEach(btn => {
         btn.addEventListener('click', function () {
-            // Remove active class from all buttons
-            filterBtns.forEach(btn => btn.classList.remove('active'));
-
-            // Add active class to clicked button
+            filterBtns.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
-
-            // Get selected category and filter products
-            const category = this.dataset.filter;
-            filterProducts(category);
+            applyFilters();
         });
     });
 
-    // Initialize with 'all' filter active
-    filterProducts('all');
+    // Search input events
+    if (searchInput) {
+        searchInput.addEventListener('input', function () {
+            applyFilters();
+        });
+    }
+
+    // Initialize default state
+    applyFilters();
 });
 
 // ==================== ADD TO CART MODAL FUNCTIONALITY ====================
@@ -1752,3 +1759,4 @@ form.addEventListener("submit", async function (e) {
         alert("Something went wrong. Please try again.");
     }
 });
+
